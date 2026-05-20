@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LifeLine — Low-Fidelity Wireframes</title>
+<style>
+:root{
+  --paper:#FAF8F3;
+  --ink:#1A1A1A;
+  --grey-1:#E8E5DD;
+  --grey-2:#C8C2B5;
+  --grey-3:#8A8478;
+  --accent:#FF6B35;
+  --note:#4A6FA5;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:var(--paper);
+  font-family:'Courier New',Courier,monospace;
+  color:var(--ink);
+  padding:40px 24px;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.025) 1px, transparent 1px);
+  background-size:24px 24px;
+  min-height:100vh;
+}
+
+.doc{
+  max-width:1400px;
+  margin:0 auto;
+}
+
+.doc-header{
+  text-align:center;
+  margin-bottom:48px;
+  padding-bottom:24px;
+  border-bottom:2px dashed var(--grey-2);
+}
+.doc-title{
+  font-size:36px;
+  font-weight:700;
+  letter-spacing:-1px;
+  margin-bottom:8px;
+}
+.doc-sub{
+  font-size:14px;
+  color:var(--grey-3);
+  letter-spacing:1px;
+}
+.doc-meta{
+  margin-top:14px;
+  font-size:12px;
+  color:var(--grey-3);
+}
+
+.flow-section{
+  margin-bottom:56px;
+}
+.flow-header{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:24px;
+  padding-bottom:8px;
+  border-bottom:2px solid var(--ink);
+}
+.flow-num{
+  background:var(--ink);
+  color:var(--paper);
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:16px;
+  font-weight:700;
+}
+.flow-title{
+  font-size:22px;
+  font-weight:700;
+  letter-spacing:-.5px;
+}
+.flow-desc{
+  font-size:13px;
+  color:var(--grey-3);
+  margin-left:auto;
+}
+
+.screens-row{
+  display:flex;
+  gap:24px;
+  flex-wrap:wrap;
+  justify-content:flex-start;
+  align-items:flex-start;
+}
+
+/* ── Phone frame (wireframe style) ── */
+.wf{
+  width:200px;
+  flex-shrink:0;
+  position:relative;
+}
+
+.wf-arrow{
+  position:absolute;
+  right:-22px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:24px;
+  color:var(--grey-3);
+  font-weight:700;
+}
+
+.wf-frame{
+  background:white;
+  border:2px solid var(--ink);
+  border-radius:24px;
+  padding:8px 6px;
+  position:relative;
+  box-shadow:3px 3px 0 var(--grey-2);
+}
+
+.wf-notch{
+  width:60px;
+  height:14px;
+  background:var(--ink);
+  border-radius:0 0 10px 10px;
+  margin:0 auto 4px;
+}
+
+.wf-content{
+  background:white;
+  border:1px solid var(--grey-2);
+  border-radius:8px;
+  padding:10px 8px;
+  min-height:340px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  font-size:9px;
+  position:relative;
+}
+
+.wf-label{
+  text-align:center;
+  font-size:11px;
+  font-weight:700;
+  margin-top:10px;
+  letter-spacing:.5px;
+}
+.wf-id{
+  text-align:center;
+  font-size:10px;
+  color:var(--grey-3);
+  margin-top:2px;
+}
+
+/* ── Wireframe atoms ── */
+.box{
+  border:1.5px solid var(--ink);
+  background:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:6px;
+  text-align:center;
+  font-size:9px;
+  font-weight:600;
+}
+.box-filled{
+  background:var(--ink);
+  color:white;
+  border-color:var(--ink);
+}
+.box-grey{ background:var(--grey-1); }
+.box-accent{ background:var(--accent); color:white; border-color:var(--accent); }
+
+.placeholder{
+  background:var(--grey-1);
+  border:1px solid var(--grey-2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:9px;
+  color:var(--grey-3);
+}
+
+.bar{
+  height:8px;
+  background:var(--grey-1);
+  border-radius:2px;
+}
+.bar.dark{ background:var(--grey-2); }
+.bar.short{ width:60%; }
+.bar.medium{ width:80%; }
+
+.line{
+  height:1px;
+  background:var(--grey-2);
+}
+
+.circle{
+  border-radius:50%;
+  background:var(--grey-1);
+  border:1px solid var(--grey-2);
+}
+
+.btn-wf{
+  border:1.5px solid var(--ink);
+  background:white;
+  padding:8px;
+  text-align:center;
+  font-size:9px;
+  font-weight:600;
+  border-radius:4px;
+  margin-top:auto;
+}
+.btn-wf.primary{ background:var(--ink); color:white; }
+.btn-wf.danger{ background:#FF3B30; color:white; border-color:#FF3B30; }
+.btn-wf.safe{ background:#34C759; color:white; border-color:#34C759; }
+
+.row-flex{ display:flex; gap:4px; }
+.col-flex{ display:flex; flex-direction:column; gap:6px; }
+
+.note{
+  position:absolute;
+  background:#FFF9C4;
+  border:1px solid #E6CC00;
+  padding:4px 8px;
+  font-size:9px;
+  border-radius:3px;
+  color:#5C5400;
+  white-space:nowrap;
+  z-index:10;
+  font-weight:600;
+  transform:rotate(-2deg);
+}
+.note.top{ top:-12px; right:-8px; }
+.note.bottom{ bottom:-8px; left:-4px; transform:rotate(1deg); }
+
+.fail-tag{
+  position:absolute;
+  top:-10px;
+  right:-10px;
+  background:#FF3B30;
+  color:white;
+  font-size:9px;
+  font-weight:700;
+  padding:3px 6px;
+  border-radius:3px;
+  z-index:5;
+}
+.delight-tag{
+  position:absolute;
+  top:-10px;
+  right:-10px;
+  background:#FFD60A;
+  color:#1A1A1A;
+  font-size:9px;
+  font-weight:700;
+  padding:3px 6px;
+  border-radius:3px;
+  z-index:5;
+}
+
+.legend{
+  margin-top:48px;
+  padding:24px;
+  background:white;
+  border:2px solid var(--ink);
+  border-radius:8px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:24px;
+  font-size:12px;
+}
+.legend-item{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.legend-key{
+  width:24px;
+  height:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:10px;
+  font-weight:700;
+  border-radius:3px;
+}
+
+@media (max-width:900px){
+  .screens-row{ justify-content:center; }
+  .wf-arrow{ display:none; }
+}
+</style>
+</head>
+<body>
+
+<div class="doc">
+
+<div class="doc-header">
+  <div class="doc-title">LifeLine</div>
+  <div class="doc-sub">Low-Fidelity Wireframes · 12 Screens · 3 Flows · 3 Failure Paths · 2 Delighters</div>
+  <div class="doc-meta">TS Academy · Phoenix Cohort · Group 39 · Capstone · May 2026</div>
+</div>
+
+<!-- ─────────── FLOW 1: ONBOARDING ─────────── -->
+<div class="flow-section">
+  <div class="flow-header">
+    <div class="flow-num">1</div>
+    <div class="flow-title">Onboarding Flow</div>
+    <div class="flow-desc">Splash → Intro slides → OTP verification → Trusted contacts</div>
+  </div>
+
+  <div class="screens-row">
+
+    <!-- S1: SPLASH -->
+    <div class="wf">
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content" style="justify-content:center;align-items:center;gap:14px;">
+          <div class="circle" style="width:60px;height:60px;border:2px solid var(--ink);"></div>
+          <div style="font-weight:700;font-size:14px;">LIFELINE</div>
+          <div class="bar short" style="background:var(--grey-2);"></div>
+          <div style="margin-top:20px;width:100%;">
+            <div class="btn-wf primary">Get Started</div>
+            <div class="btn-wf" style="margin-top:6px;border:none;color:var(--grey-3);">Already have account</div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-label">SPLASH</div>
+      <div class="wf-id">S1</div>
+      <div class="wf-arrow">→</div>
+    </div>
+
+    <!-- S2: ONBOARDING 1 -->
+    <div class="wf">
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content">
+          <div class="placeholder" style="height:90px;">[ illo ]</div>
+          <div class="row-flex" style="justify-content:center;margin:6px 0;">
+            <div style="width:14px;height:4px;background:var(--ink);border-radius:2px;"></div>
+            <div style="width:4px;height:4px;background:var(--grey-2);border-radius:2px;"></div>
+            <div style="width:4px;height:4px;background:var(--grey-2);border-radius:2px;"></div>
+          </div>
+          <div class="bar dark medium" style="height:10px;"></div>
+          <div class="bar dark short" style="height:10px;"></div>
+          <div class="col-flex" style="margin-top:8px;">
+            <div class="bar"></div><div class="bar"></div><div class="bar short"></div>
+          </div>
+          <div class="btn-wf primary">Continue</div>
+          <div class="btn-wf" style="border:none;color:var(--grey-3);">Skip</div>
+        </div>
+      </div>
+      <div class="wf-label">ONBOARDING 1</div>
+      <div class="wf-id">S2 · "Your safety, proactively"</div>
+      <div class="wf-arrow">→</div>
+    </div>
+
+    <!-- S3: OTP -->
+    <div class="wf">
+      <div class="note top">FAIL PATH: wrong code</div>
+      <div class="fail-tag">!</div>
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content">
+          <div class="circle" style="width:20px;height:20px;"></div>
+          <div class="bar dark medium" style="height:10px;margin-top:6px;"></div>
+          <div class="bar short"></div>
+          <div class="row-flex" style="margin-top:8px;">
+            <div class="box" style="width:34px;">+234</div>
+            <div class="box" style="flex:1;">phone…</div>
+          </div>
+          <div class="btn-wf primary" style="margin-top:0;">Send OTP</div>
+          <div class="row-flex" style="margin-top:8px;">
+            <div class="box" style="flex:1;height:24px;">_</div>
+            <div class="box" style="flex:1;height:24px;">_</div>
+            <div class="box" style="flex:1;height:24px;">_</div>
+            <div class="box" style="flex:1;height:24px;">_</div>
+          </div>
+          <div style="font-size:8px;color:#FF3B30;text-align:center;">⚠ wrong code: X tries left</div>
+        </div>
+      </div>
+      <div class="wf-label">OTP VERIFY</div>
+      <div class="wf-id">S3 · correct = 8484</div>
+      <div class="wf-arrow">→</div>
+    </div>
+
+    <!-- S4: ONBOARDING 2 -->
+    <div class="wf">
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content">
+          <div class="placeholder" style="height:90px;">[ map illo ]</div>
+          <div class="row-flex" style="justify-content:center;margin:6px 0;">
+            <div style="width:4px;height:4px;background:var(--grey-2);border-radius:2px;"></div>
+            <div style="width:14px;height:4px;background:var(--ink);border-radius:2px;"></div>
+            <div style="width:4px;height:4px;background:var(--grey-2);border-radius:2px;"></div>
+          </div>
+          <div class="bar dark medium" style="height:10px;"></div>
+          <div class="bar dark short" style="height:10px;"></div>
+          <div class="col-flex" style="margin-top:8px;">
+            <div class="bar"></div><div class="bar"></div><div class="bar short"></div>
+          </div>
+          <div class="btn-wf primary">Continue</div>
+          <div class="btn-wf" style="border:none;color:var(--grey-3);">Skip</div>
+        </div>
+      </div>
+      <div class="wf-label">ONBOARDING 2</div>
+      <div class="wf-id">S4 · "Share your journey"</div>
+      <div class="wf-arrow">→</div>
+    </div>
+
+    <!-- S5: CONTACTS -->
+    <div class="wf">
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content">
+          <div class="circle" style="width:20px;height:20px;"></div>
+          <div class="bar dark medium" style="height:10px;margin-top:6px;"></div>
+          <div class="bar short"></div>
+          <div class="col-flex" style="margin-top:8px;">
+            <div class="box" style="justify-content:flex-start;gap:6px;padding:6px;">
+              <div class="circle" style="width:18px;height:18px;background:var(--grey-2);"></div>
+              <div style="flex:1;text-align:left;">Amaka · ✓</div>
+            </div>
+            <div class="box" style="justify-content:flex-start;gap:6px;padding:6px;">
+              <div class="circle" style="width:18px;height:18px;background:var(--grey-2);"></div>
+              <div style="flex:1;text-align:left;">Tunde · ⏳</div>
+            </div>
+            <div class="box" style="border-style:dashed;color:var(--grey-3);">＋ Add contact</div>
+          </div>
+          <div class="btn-wf primary">Finish setup</div>
+        </div>
+      </div>
+      <div class="wf-label">TRUSTED CONTACTS</div>
+      <div class="wf-id">S5 · consent required</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─────────── FLOW 2: SAFE ARRIVAL ─────────── -->
+<div class="flow-section">
+  <div class="flow-header">
+    <div class="flow-num">2</div>
+    <div class="flow-title">Safe Arrival Flow</div>
+    <div class="flow-desc">Home → Share trip → Live tracking → Confirmed safe (with delighter)</div>
+  </div>
+
+  <div class="screens-row">
+
+    <!-- S6: HOME -->
+    <div class="wf">
+      <div class="delight-tag">★</div>
+      <div class="note top">DELIGHTER: shake-to-SOS</div>
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content">
+          <div class="bar short"></div>
+          <div class="bar dark medium" style="height:10px;"></div>
+          <div class="row-flex" style="margin-top:4px;">
+            <div class="box" style="font-size:8px;padding:3px 6px;">2 contacts</div>
+            <div class="box" style="font-size:8px;padding:3px 6px;">4 trips</div>
+          </div>
+          <div style="display:flex;justify-content:center;margin:14px 0;">
+            <div class="circle" style="width:72px;height:72px;background:#FF3B30;border-color:#FF3B30;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:14px;">SOS</div>
+          </div>
+          <div class="box" style="padding:6px;justify-content:flex-start;gap:6px;">
+            <div class="placeholder" style="width:20px;height:20px;">🛫</div>
+            <div style="flex:1;text-align:left;">Start safe arrival ›</div>
+          </div>
+          <div class="row-flex" style="margin-top:auto;">
+            <div class="box" style="flex:1;padding:8px;flex-direction:column;">
+              <div style="font-weight:700;font-size:14px;">2</div>
+              <div style="font-size:7px;color:var(--grey-3);">CONTACTS</div>
+            </div>
+            <div class="box" style="flex:1;padding:8px;flex-direction:column;">
+              <div style="font-weight:700;font-size:14px;">4</div>
+              <div style="font-size:7px;color:var(--grey-3);">TRIPS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-label">HOME</div>
+      <div class="wf-id">S6 · hold SOS 3s = emergency</div>
+      <div class="wf-arrow">→</div>
+    </div>
+
+    <!-- S7: SHARE TRIP -->
+    <div class="wf">
+      <div class="fail-tag">!</div>
+      <div class="note top">FAIL: location denied</div>
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content">
+          <div class="circle" style="width:20px;height:20px;"></div>
+          <div class="bar dark medium" style="height:10px;margin-top:6px;"></div>
+          <div class="bar short"></div>
+          <div class="box" style="padding:8px;flex-direction:column;align-items:flex-start;gap:6px;">
+            <div style="display:flex;gap:6px;align-items:center;font-size:8px;">
+              <div class="circle" style="width:8px;height:8px;background:var(--ink);"></div>
+              <span>From: current</span>
+            </div>
+            <div class="line" style="width:100%;"></div>
+            <div style="display:flex;gap:6px;align-items:center;font-size:8px;">
+              <div class="circle" style="width:8px;height:8px;background:none;"></div>
+              <span>To: Home, Yaba</span>
+            </div>
+          </div>
+          <div style="font-size:8px;font-weight:700;">ETA</div>
+          <div class="row-flex">
+            <div class="box" style="flex:1;font-size:8px;">15m</div>
+            <div class="box box-filled" style="flex:1;font-size:8px;">30m</div>
+            <div class="box" style="flex:1;font-size:8px;">60m</div>
+          </div>
+          <div class="box" style="padding:6px;font-size:8px;">Sharing with: AM, TJ</div>
+          <div class="btn-wf primary">Share with contacts</div>
+        </div>
+      </div>
+      <div class="wf-label">SHARE TRIP</div>
+      <div class="wf-id">S7 · destination + ETA</div>
+      <div class="wf-arrow">→</div>
+    </div>
+
+    <!-- S8: LIVE TRACKING -->
+    <div class="wf">
+      <div class="fail-tag">!</div>
+      <div class="note top">FAIL: ETA overdue</div>
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content" style="padding:0;">
+          <div class="placeholder" style="height:120px;border-radius:7px 7px 0 0;border:none;border-bottom:1px solid var(--grey-2);position:relative;">
+            [ live map ]
+            <div style="position:absolute;top:4px;right:4px;background:#FF3B30;color:white;font-size:7px;padding:2px 4px;border-radius:2px;">● LIVE</div>
+          </div>
+          <div style="padding:8px;display:flex;flex-direction:column;gap:6px;">
+            <div style="font-size:7px;color:var(--grey-3);text-align:center;">ARRIVING IN</div>
+            <div style="font-size:22px;font-weight:700;text-align:center;letter-spacing:-1px;">28:14</div>
+            <div style="font-size:8px;color:var(--grey-3);text-align:center;">Home, Yaba</div>
+            <div class="box" style="padding:4px;font-size:8px;">
+              <div class="row-flex">
+                <div class="circle" style="width:14px;height:14px;background:var(--grey-2);"></div>
+                <div class="circle" style="width:14px;height:14px;background:var(--grey-2);margin-left:-4px;"></div>
+              </div>
+              <span style="margin-left:6px;flex:1;text-align:left;">2 watching</span>
+              <span>●LIVE</span>
+            </div>
+            <div class="btn-wf safe" style="font-size:9px;">✓ I've arrived</div>
+            <div class="btn-wf" style="font-size:9px;border-color:var(--grey-2);color:var(--grey-3);">Cancel trip</div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-label">LIVE TRACKING</div>
+      <div class="wf-id">S8 · real OSM map, countdown</div>
+      <div class="wf-arrow">→</div>
+    </div>
+
+    <!-- S9: SAFE CONFIRMED -->
+    <div class="wf">
+      <div class="delight-tag">★</div>
+      <div class="note top">DELIGHTER: confetti 🎉</div>
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content" style="justify-content:center;align-items:center;gap:12px;">
+          <div class="circle" style="width:60px;height:60px;background:#A8F0D1;border-color:#34C759;display:flex;align-items:center;justify-content:center;font-size:24px;">✓</div>
+          <div style="font-weight:700;font-size:14px;text-align:center;">You're safe! 🎉</div>
+          <div class="bar short" style="background:var(--grey-2);"></div>
+          <div class="col-flex" style="width:100%;">
+            <div class="box" style="padding:5px;font-size:8px;">
+              <div class="circle" style="width:16px;height:16px;background:var(--grey-2);"></div>
+              <div style="flex:1;text-align:left;margin-left:4px;">Amaka · seen ✓</div>
+              <span>😮‍💨</span>
+            </div>
+            <div class="box" style="padding:5px;font-size:8px;">
+              <div class="circle" style="width:16px;height:16px;background:var(--grey-2);"></div>
+              <div style="flex:1;text-align:left;margin-left:4px;">Tunde · 'Relieved!'</div>
+              <span>🙏</span>
+            </div>
+          </div>
+          <div class="btn-wf primary" style="margin-top:auto;width:100%;">Back to home</div>
+        </div>
+      </div>
+      <div class="wf-label">SAFE CONFIRMED</div>
+      <div class="wf-id">S9 · session closed + reactions</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─────────── FLOW 3: EMERGENCY ─────────── -->
+<div class="flow-section">
+  <div class="flow-header">
+    <div class="flow-num">3</div>
+    <div class="flow-title">Emergency / SOS Flow</div>
+    <div class="flow-desc">SOS Hold → Active alert → Contact perspective → Resolved</div>
+  </div>
+
+  <div class="screens-row">
+
+    <!-- S10: SOS ACTIVE -->
+    <div class="wf">
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content" style="background:#FFF5F5;border-color:#FFD0CC;">
+          <div class="box" style="background:#FF3B30;color:white;border-color:#FF3B30;font-size:8px;width:fit-content;padding:3px 8px;">● SOS ACTIVATED</div>
+          <div style="font-size:8px;color:var(--grey-3);">Escalation in</div>
+          <div style="font-size:32px;font-weight:700;color:#FF3B30;letter-spacing:-1px;line-height:1;">2:45</div>
+          <div class="col-flex" style="margin-top:8px;flex:1;">
+            <div class="box" style="background:#FFE5E3;border-color:#FFC0BB;padding:6px;font-size:8px;align-items:flex-start;flex-direction:column;">
+              <span style="font-size:7px;color:var(--grey-3);">📡 GPS</span>
+              <span>Live · sharing</span>
+            </div>
+            <div class="box" style="background:#FFE5E3;border-color:#FFC0BB;padding:6px;font-size:8px;align-items:flex-start;flex-direction:column;">
+              <span style="font-size:7px;color:var(--grey-3);">👥 CONTACTS</span>
+              <span>Amaka & Tunde alerted</span>
+            </div>
+          </div>
+          <div class="btn-wf" style="border-color:var(--grey-2);color:var(--ink);font-size:9px;">I'm safe — cancel</div>
+        </div>
+      </div>
+      <div class="wf-label">SOS ACTIVE</div>
+      <div class="wf-id">S10 · 2:45 countdown to escalation</div>
+      <div class="wf-arrow">→</div>
+    </div>
+
+    <!-- S11: CONTACT VIEW -->
+    <div class="wf">
+      <div class="note bottom" style="background:#E3F2FD;border-color:#90CAF9;color:#0D47A1;">CONTACT'S phone</div>
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content" style="padding:0;">
+          <div class="placeholder" style="height:110px;border-radius:7px 7px 0 0;border:none;background:#FFE5E3;position:relative;">
+            [ red map ]
+            <div style="position:absolute;top:4px;right:4px;background:#FF3B30;color:white;font-size:7px;padding:2px 4px;border-radius:2px;">SOS LIVE</div>
+          </div>
+          <div style="padding:8px;display:flex;flex-direction:column;gap:6px;">
+            <div class="row-flex" style="align-items:center;">
+              <div class="circle" style="width:32px;height:32px;background:#FF3B30;border-color:#FF3B30;color:white;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;">AU</div>
+              <div style="flex:1;">
+                <div style="font-size:9px;font-weight:700;">Ada Umeh — SOS</div>
+                <div style="font-size:7px;color:#FF3B30;">● Live · 3 min ago</div>
+              </div>
+            </div>
+            <div class="box" style="padding:5px;font-size:8px;align-items:flex-start;flex-direction:column;">
+              <span style="font-size:7px;color:var(--grey-3);">LAST LOCATION</span>
+              <span>Herbert Macaulay, Yaba</span>
+            </div>
+            <div class="row-flex">
+              <div class="btn-wf safe" style="flex:1;font-size:8px;padding:6px;">📞 Call</div>
+              <div class="btn-wf" style="flex:1;font-size:8px;padding:6px;">💬 Msg</div>
+              <div class="btn-wf danger" style="flex:1;font-size:8px;padding:6px;">🚨 Esc</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-label">CONTACT VIEW</div>
+      <div class="wf-id">S11 · what Amaka/Tunde sees</div>
+      <div class="wf-arrow">→</div>
+    </div>
+
+    <!-- S12: RESOLVED -->
+    <div class="wf">
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content" style="justify-content:center;align-items:center;gap:12px;">
+          <div class="circle" style="width:60px;height:60px;background:var(--grey-1);border-color:var(--grey-2);display:flex;align-items:center;justify-content:center;font-size:22px;">🔒</div>
+          <div style="font-weight:700;font-size:14px;text-align:center;">Emergency resolved</div>
+          <div class="bar short" style="background:var(--grey-2);"></div>
+          <div class="col-flex" style="width:100%;">
+            <div class="box" style="padding:5px;font-size:8px;">
+              <div class="circle" style="width:16px;height:16px;background:var(--grey-2);"></div>
+              <div style="flex:1;text-align:left;margin-left:4px;">Amaka · cancelled</div>
+              <span>🙌</span>
+            </div>
+            <div class="box" style="padding:5px;font-size:8px;">
+              <div class="circle" style="width:16px;height:16px;background:var(--grey-2);"></div>
+              <div style="flex:1;text-align:left;margin-left:4px;">Tunde · 'Thank God!'</div>
+              <span>😮‍💨</span>
+            </div>
+          </div>
+          <div class="btn-wf primary" style="margin-top:auto;width:100%;">Back to home</div>
+        </div>
+      </div>
+      <div class="wf-label">EMERGENCY RESOLVED</div>
+      <div class="wf-id">S12 · all clear</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─────────── LEGEND ─────────── -->
+<div class="legend">
+  <div style="font-weight:700;font-size:13px;width:100%;">Legend</div>
+  <div class="legend-item">
+    <div class="legend-key" style="background:#FF3B30;color:white;">!</div>
+    <span>Failure path</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-key" style="background:#FFD60A;color:#1A1A1A;">★</div>
+    <span>Delighter</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-key" style="background:#FFF9C4;border:1px solid #E6CC00;font-size:10px;">📝</div>
+    <span>Design annotation</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-key" style="background:var(--ink);color:white;">▮</div>
+    <span>Primary action</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-key" style="background:#34C759;color:white;">✓</div>
+    <span>Safe state action</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-key" style="background:white;border:1.5px solid #1A1A1A;color:#1A1A1A;">▢</div>
+    <span>Secondary action</span>
+  </div>
+  <div style="width:100%;font-size:12px;color:var(--grey-3);margin-top:8px;line-height:1.6;">
+    <strong>Wireframe principles applied:</strong> dark-first design (real app uses navy bg) · sub-60s onboarding · 3-second SOS hold to prevent false alarms · 2:45 escalation gives user time to cancel · contact consent required · prevention-first (safe arrival used more than SOS) · works on Nigerian 3G (single HTML, embedded map library, OSM tiles load progressively).
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>

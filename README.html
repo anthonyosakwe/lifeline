@@ -1,0 +1,89 @@
+<h1>LifeLine 🛡️</h1>
+<blockquote>
+<p>Tell your circle you made it home safely — before they have to ask.</p>
+</blockquote>
+<p>A personal-safety check-in app built for Nigerian mobile networks. Prevention-first design: the daily safe-arrival habit is what makes the SOS work when it matters.</p>
+<p><strong>TS Academy · Phoenix Cohort · Group 39 · Capstone · May 2026</strong></p>
+<hr />
+<h2>🔗 Project Links</h2>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>📱 <strong>Live app</strong></td>
+<td><a href="https://anthonyosakwe.github.io/lifeline/">anthonyosakwe.github.io/lifeline</a></td>
+</tr>
+<tr>
+<td>📐 <strong>Wireframes (lo-fi)</strong></td>
+<td><a href="https://anthonyosakwe.github.io/lifeline-wireframes/">anthonyosakwe.github.io/lifeline-wireframes</a></td>
+</tr>
+<tr>
+<td>📁 <strong>Supporting documents</strong> (PRD, research, design files)</td>
+<td><a href="https://drive.google.com/drive/folders/1VQ0uHWcnxWfgp1AR5YTjIHG6biSaDdbZ">Google Drive folder</a></td>
+</tr>
+<tr>
+<td>📄 <strong>Build documentation</strong></td>
+<td><a href="./lifeline-build-docs.md">lifeline-build-docs.md</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>🎯 The Problem</h2>
+<p>Nigerians — especially women, professionals working late, and students — face daily safety friction. There's no fast, low-friction way to tell trusted contacts <em>&quot;I'm on my way home&quot;</em> or <em>&quot;I need help&quot;</em> without unlocking your phone, finding the right person, and typing. Existing options (WhatsApp share-location, calling a friend) are slow, social, and don't scale to emergencies.</p>
+<p><strong>Target user:</strong> Ada, 28, project manager in Lagos. Takes Bolt rides home after late meetings. Has two trusted contacts (sister + close friend).</p>
+<hr />
+<h2>🚀 Demo Cheatsheet (for judges)</h2>
+<p>Open the <a href="https://anthonyosakwe.github.io/lifeline/">live app</a> on a phone, then:</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>What to expect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tap <strong>Get started</strong></td>
+<td>Walk through onboarding</td>
+</tr>
+<tr>
+<td>OTP code</td>
+<td>Use <strong><code>8484</code></strong> (any other code triggers the failure path)</td>
+</tr>
+<tr>
+<td><strong>Home screen</strong></td>
+<td>Hold the red <strong>SOS</strong> button for 3 seconds → emergency activates</td>
+</tr>
+<tr>
+<td><strong>Start safe arrival</strong> card</td>
+<td>Tap <strong>Allow</strong> on the GPS banner → real OpenStreetMap loads with your live location</td>
+</tr>
+<tr>
+<td>Bottom demo nav</td>
+<td>Jump instantly between flows: 🔑 Onboard · 🏠 Safe Arrival · 🚨 SOS · ⚠️ Failures</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Three failure paths to demo:</strong> wrong OTP code · location permission denied · trip ETA overdue
+<strong>Two delighters:</strong> confetti on safe arrival · shake-to-SOS hint</p>
+<hr />
+<h2>🛠️ Tech Highlights</h2>
+<ul>
+<li><strong>Single-file HTML app</strong> (~210 KB) — deploy to any static host</li>
+<li><strong>Real OpenStreetMap</strong> via Leaflet — embedded inline, <strong>zero CDN dependencies</strong></li>
+<li><strong>Works on the worst Nigerian networks:</strong> library is self-hosted, tiles load progressively, error fallbacks for failed tiles</li>
+<li><strong>Real GPS</strong> via <code>navigator.geolocation</code> + on-screen permission flow</li>
+<li><strong>Native haptics</strong> for SOS (Android <code>navigator.vibrate</code>)</li>
+<li><strong>Shake detection</strong> via DeviceMotion API</li>
+<li>No build step. No dependencies. No backend (yet — V2 will wire to Supabase like SafeSignal).</li>
+</ul>
+<hr />
+<h2>👥 Group 39</h2>
+<p>Built with ☕ + ⚡ over 4 weeks.</p>
+<hr />
+<p><em>If you have access issues with the Drive folder, contact the team — link sharing is set to &quot;Anyone with the link · Viewer.&quot;</em></p>
