@@ -1,89 +1,285 @@
-<h1>LifeLine 🛡️</h1>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeLine 🛡️ - Capstone Documentation</title>
+    <style>
+        /* Base Variables - Dark Theme Defaults */
+        :root {
+            --bg-color: #0d1117;
+            --text-color: #c9d1d9;
+            --accent-color: #da3633; /* Safety Red */
+            --link-color: #58a6ff;
+            --border-color: #30363d;
+            --quote-bg: #1f242c;
+            --header-text: #ffffff;
+            --code-bg: #21262d;
+            --code-text: #ff7b72;
+            --toggle-bg: #21262d;
+            --toggle-text: #ffffff;
+        }
 
-<blockquote>
-<p>Tell your circle you made it home safely — before they have to ask.</p>
-</blockquote>
+        /* Light Theme Overrides */
+        [data-theme="light"] {
+            --bg-color: #ffffff;
+            --text-color: #24292e;
+            --accent-color: #d73a49;
+            --link-color: #0366d6;
+            --border-color: #e1e4e8;
+            --quote-bg: #f6f8fa;
+            --header-text: #1b1f23;
+            --code-bg: #f6f8fa;
+            --code-text: #d73a49;
+            --toggle-bg: #f6f8fa;
+            --toggle-text: #24292e;
+        }
 
-<p>A personal-safety check-in app built for Nigerian mobile networks. Prevention-first design: the daily safe-arrival habit is what makes the SOS work when it matters.</p>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-<p><strong>TS Academy · Phoenix Cohort · Group 39 · Capstone · May 2026</strong></p>
+        .container {
+            max-width: 760px;
+            width: 100%;
+            position: relative;
+        }
 
-<hr />
+        /* Interactive Theme Button Styling */
+        .theme-toggle-btn {
+            position: absolute;
+            top: 5px;
+            right: 0;
+            background-color: var(--toggle-bg);
+            color: var(--toggle-text);
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
 
-<h2>🔗 Project Links</h2>
+        .theme-toggle-btn:hover {
+            opacity: 0.9;
+        }
 
-<h3 style="display: inline;">📱 Live app</h3> &emsp;👉 <a href="https://anthonyosakwe.github.io/lifeline/lifelineapp/" target="_blank" rel="noopener noreferrer">anthonyosakwe.github.io/lifeline/lifelineapp/</a>
-<br><br>
+        h1, h2, h3 {
+            color: var(--header-text);
+            font-weight: 600;
+        }
 
-<h3 style="display: inline;">📐 Wireframes (lo-fi)</h3> &emsp;👉 <a href="https://anthonyosakwe.github.io/lifeline/wireframes/" target="_blank" rel="noopener noreferrer">anthonyosakwe.github.io/lifeline/wireframes/</a>
-<br><br>
+        h1 {
+            font-size: 2.25rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+            padding-right: 100px; /* Leave space for button on mobile */
+        }
 
-<h3 style="display: inline;">📁 Supporting documents</h3> &emsp;PRD, research, design files &emsp; → <a href="https://drive.google.com/drive/folders/1V06a5l_t_API2en-50c_yjeJstFNpbzb" target="_blank" rel="noopener noreferrer">Google Drive folder</a>
-<br><br>
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+        }
 
-<h3 style="display: inline;">📄 Build documentation</h3> &emsp;<a href="https://anthonyosakwe.github.io/lifeline/lifeline-build-docs/" target="_blank" rel="noopener noreferrer">anthonyosakwe.github.io/lifeline/lifeline-build-docs/</a>
-<br><br>
+        h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
 
-<hr />
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
 
-<h2>🎯 The Problem</h2>
+        a:hover {
+            text-decoration: underline;
+        }
 
-<p>Nigerians — especially women, professionals working late, and students — face daily safety friction. There's no fast, low-friction way to tell trusted contacts <em>"I'm on my way home"</em> or <em>"I need help"</em> without unlocking your phone, finding the right person, and typing. Existing options (WhatsApp share-location, calling a friend) are slow, social, and don't scale to emergencies.</p>
+        blockquote {
+            background-color: var(--quote-bg);
+            border-left: 4px solid var(--accent-color);
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 0 6px 6px 0;
+        }
 
-<p><strong>Target user:</strong> Ada, 28, project manager in Lagos. Takes Bolt rides home after late meetings. Has two trusted contacts (sister + close friend).</p>
+        blockquote p {
+            margin: 0;
+            font-style: italic;
+            color: var(--header-text);
+            font-size: 1.1rem;
+        }
 
-<hr />
+        hr {
+            border: 0;
+            border-top: 1px solid var(--border-color);
+            margin: 30px 0;
+        }
 
-<h2>🚀 Demo Cheatsheet (for judges)</h2>
+        ul {
+            padding-left: 20px;
+        }
 
-<p>Open the <a href="https://anthonyosakwe.github.io/lifeline/lifelineapp/" target="_blank" rel="noopener noreferrer">live app</a> on a phone, then:</p>
+        li {
+            margin-bottom: 10px;
+        }
 
-<br />
+        code {
+            background-color: var(--code-bg);
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+            font-size: 0.9rem;
+            color: var(--code-text);
+        }
 
-<p><strong>Tap Get started</strong><br />Walk through onboarding</p>
+        .cheatsheet-step {
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 2px solid var(--border-color);
+        }
 
-<br />
+        @media (max-width: 550px) {
+            .theme-toggle-btn {
+                position: static;
+                display: block;
+                margin-bottom: 15px;
+                width: 100%;
+                text-align: center;
+            }
+            h1 { padding-right: 0; }
+        }
+    </style>
+</head>
+<body>
 
-<p><strong>OTP code</strong><br />Use <code>8484</code> (any other code triggers the failure path)</p>
+<div class="container">
+    <!-- Theme Switcher Button -->
+    <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark and light mode">☀️ Light Mode</button>
 
-<br />
+    <h1>LifeLine 🛡️</h1>
 
-<p><strong>Home screen</strong><br />Hold the red <strong>SOS</strong> button for 3 seconds → emergency activates</p>
+    <blockquote>
+        <p>Tell your circle you made it home safely — before they have to ask.</p>
+    </blockquote>
 
-<br />
+    <p>A personal-safety check-in app built for Nigerian mobile networks. Prevention-first design: the daily safe-arrival habit is what makes the SOS work when it matters.</p>
 
-<p><strong>Start safe arrival card</strong><br />Tap <strong>Allow</strong> on the GPS banner → real OpenStreetMap loads with your live location</p>
+    <p><strong>TS Academy · Phoenix Cohort · Group 39 · Capstone · May 2026</strong></p>
 
-<br />
+    <hr />
 
-<p><strong>Bottom demo nav</strong><br />Jump instantly between flows: 🔑 Onboard · 🏠 Safe Arrival · 🚨 SOS · ⚠️ Failures</p>
+    <h2>🔗 Project Links</h2>
 
-<br />
+    <h3 style="display: inline;">📱 Live app</h3> &emsp;👉 <a href="https://github.io" target="_blank" rel="noopener noreferrer">anthonyosakwe.github.io/lifeline/lifelineapp/</a>
+    <br><br>
 
-<p><strong>Three failure paths to demo:</strong> wrong OTP code · location permission denied · trip ETA overdue</p>
+    <h3 style="display: inline;">📐 Wireframes (lo-fi)</h3> &emsp;👉 <a href="https://github.io" target="_blank" rel="noopener noreferrer">anthonyosakwe.github.io/lifeline/wireframes/</a>
+    <br><br>
 
-<p><strong>Two delighters:</strong> confetti on safe arrival · shake-to-SOS hint</p>
+    <h3 style="display: inline;">📁 Supporting documents</h3> &emsp;PRD, research, design files &emsp; → <a href="https://google.com" target="_blank" rel="noopener noreferrer">Google Drive folder</a>
+    <br><br>
 
-<hr />
+    <h3 style="display: inline;">📄 Build documentation</h3> &emsp;<a href="https://github.io" target="_blank" rel="noopener noreferrer">anthonyosakwe.github.io/lifeline/lifeline-build-docs/</a>
+    <br><br>
 
-<h2>🛠️ Tech Highlights</h2>
+    <hr />
 
-<ul>
-<li><strong>Single-file HTML app</strong> (~210 KB) — deploy to any static host</li>
-<li><strong>Real OpenStreetMap</strong> via Leaflet — embedded inline, <strong>zero CDN dependencies</strong></li>
-<li><strong>Works on the worst Nigerian networks:</strong> library is self-hosted, tiles load progressively, error fallbacks for failed tiles</li>
-<li><strong>Real GPS</strong> via <code>navigator.geolocation</code> + on-screen permission flow</li>
-<li><strong>Native haptics</strong> for SOS (Android <code>navigator.vibrate</code>)</li>
-<li><strong>Shake detection</strong> via DeviceMotion API</li>
-<li>No build step. No dependencies. No backend (yet — V2 will wire to Supabase like SafeSignal).</li>
-</ul>
+    <h2>🎯 The Problem</h2>
 
-<hr />
+    <p>Nigerians — especially women, professionals working late, and students — face daily safety friction. There's no fast, low-friction way to tell trusted contacts <em>"I'm on my way home"</em> or <em>"I need help"</em> without unlocking your phone, finding the right person, and typing. Existing options (WhatsApp share-location, calling a friend) are slow, social, and don't scale to emergencies.</p>
 
-<h2>👥 Group 39</h2>
+    <p><strong>Target user:</strong> Ada, 28, project manager in Lagos. Takes Bolt rides home after late meetings. Has two trusted contacts (sister + close friend).</p>
 
-<p>Built with ☕ + ⚡ over 4 weeks.</p>
+    <hr />
 
-<hr />
+    <h2>🚀 Demo Cheatsheet (for judges)</h2>
 
-<p><em>If you have access issues with the Drive folder, contact the team — link sharing is set to "Anyone with the link · Viewer."</em></p>
+    <p>Open the <a href="https://github.io" target="_blank" rel="noopener noreferrer">live app</a> on a phone, then:</p>
+
+    <div class="cheatsheet-step">
+        <p><strong>Tap Get started</strong><br />Walk through onboarding</p>
+    </div>
+
+    <div class="cheatsheet-step">
+        <p><strong>OTP code</strong><br />Use <code>8484</code> (any other code triggers the failure path)</p>
+    </div>
+
+    <div class="cheatsheet-step">
+        <p><strong>Home screen</strong><br />Hold the red <strong>SOS</strong> button for 3 seconds → emergency activates</p>
+    </div>
+
+    <div class="cheatsheet-step">
+        <p><strong>Start safe arrival card</strong><br />Tap <strong>Allow</strong> on the GPS banner → real OpenStreetMap loads with your live location</p>
+    </div>
+
+    <div class="cheatsheet-step">
+        <p><strong>Bottom demo nav</strong><br />Jump instantly between flows: 🔑 Onboard · 🏠 Safe Arrival · 🚨 SOS · ⚠️ Failures</p>
+    </div>
+
+    <p><strong>Three failure paths to demo:</strong> wrong OTP code · location permission denied · trip ETA overdue</p>
+
+    <p><strong>Two delighters:</strong> confetti on safe arrival · shake-to-SOS hint</p>
+
+    <hr />
+
+    <h2>🛠️ Tech Highlights</h2>
+
+    <ul>
+        <li><strong>Single-file HTML app</strong> (~210 KB) — deploy to any static host</li>
+        <li><strong>Real OpenStreetMap</strong> via Leaflet — embedded inline, <strong>zero CDN dependencies</strong></li>
+        <li><strong>Works on the worst Nigerian networks:</strong> library is self-hosted, tiles load progressively, error fallbacks for failed tiles</li>
+        <li><strong>Real GPS</strong> via <code>navigator.geolocation</code> + on-screen permission flow</li>
+        <li><strong>Native haptics</strong> for SOS (Android <code>navigator.vibrate</code>)</li>
+        <li><strong>Shake detection</strong> via DeviceMotion API</li>
+        <li>No build step. No dependencies. No backend (yet — V2 will wire to Supabase like SafeSignal).</li>
+    </ul>
+
+    <hr />
+
+    <h2>👥 Group 39</h2>
+
+    <p>Built with ☕ + ⚡ over 4 weeks.</p>
+
+    <hr />
+
+    <p style="font-style: italic; font-size: 0.9rem; color: #8b949e;">If you have access issues with the Drive folder, contact the team — link sharing is set to "Anyone with the link · Viewer."</p>
+
+</div>
+
+<!-- Theme Switcher Script Functionality -->
+<script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const htmlEl = document.documentElement;
+
+    // Check system or saved preference
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    htmlEl.setAttribute('data-theme', savedTheme);
+    updateButtonText(savedTheme);
+
+    toggleBtn.addEventListener('click', () => {
+        const currentTheme = htmlEl.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        htmlEl.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateButtonText(newTheme);
+    });
+
+    function updateButtonText(theme) {
+        toggleBtn.textContent = theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+    }
+</script>
+
+</body>
+</html>
