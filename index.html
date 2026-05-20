@@ -243,6 +243,14 @@ body{background:#060D18;min-height:100dvh;display:flex;align-items:center;justif
 .shk-toast{position:absolute;bottom:80px;left:50%;transform:translateX(-50%) translateY(8px);background:rgba(255,59,48,.92);color:#fff;padding:10px 18px;border-radius:20px;font-size:13px;font-weight:600;opacity:0;pointer-events:none;white-space:nowrap;transition:all .3s;z-index:500;}
 .shk-toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
+
+.gps-banner{display:flex;align-items:center;gap:12px;padding:12px 14px;background:rgba(0,201,175,.08);border:1px solid rgba(0,201,175,.25);border-radius:var(--rs);margin-bottom:14px;}
+.gps-banner.ok{background:rgba(52,199,89,.1);border-color:rgba(52,199,89,.3);}
+.gps-banner.err{background:rgba(255,59,48,.08);border-color:rgba(255,59,48,.25);}
+.gps-btn{background:var(--teal);color:var(--navy);border:none;padding:8px 14px;border-radius:8px;font-family:var(--font);font-size:12px;font-weight:700;cursor:pointer;flex-shrink:0;}
+.gps-btn:active{transform:scale(.97);}
+.gps-banner.ok .gps-btn{display:none;}
+
 /* Leaflet container overrides */
 .leaflet-container{background:#0D2744 !important;font-family:system-ui,sans-serif !important;}
 .leaflet-tile-pane{filter:brightness(0.85) saturate(0.7) hue-rotate(180deg);}
@@ -1056,6 +1064,14 @@ svg.leaflet-image-layer.leaflet-interactive path {
     <button class="back" onclick="back()">←</button>
     <div class="stitle">Share your trip</div>
     <div class="ssub">Your contacts receive a live tracking link the moment you share.</div>
+    <div id="gpsBanner" class="gps-banner">
+      <span id="gpsIcon">📍</span>
+      <div style="flex:1">
+        <div id="gpsStatus" style="font-size:13px;color:#fff;font-weight:600;">Tap to use your GPS</div>
+        <div id="gpsHint" style="font-size:11px;color:var(--slate);margin-top:2px;">Allow location when your browser asks</div>
+      </div>
+      <button class="gps-btn" onclick="grantGPS()">Allow</button>
+    </div>
     <div class="loc-grp">
       <div class="loc-row"><div class="loc-df"></div><div><div class="loc-l">From</div><div class="loc-v" id="fromText">📍 Detecting location…</div></div></div>
       <div class="loc-div"></div>
@@ -1255,6 +1271,73 @@ function requestGPS(){
     );
   });
 }
+
+// Explicit user-gesture GPS request — forces the browser permission prompt
+async function grantGPS(){
+  const banner=document.getElementById('gpsBanner');
+  const status=document.getElementById('gpsStatus');
+  const hint=document.getElementById('gpsHint');
+  const icon=document.getElementById('gpsIcon');
+  if(!navigator.geolocation){
+    banner.classList.add('err');
+    status.textContent='GPS not supported';
+    hint.textContent='Use manual location below';
+    return;
+  }
+  status.textContent='Requesting permission…';
+  hint.textContent='Tap Allow on the browser prompt';
+  icon.textContent='⏳';
+  // Check permission status first if available
+  if(navigator.permissions){
+    try{
+      const p=await navigator.permissions.query({name:'geolocation'});
+      if(p.state==='denied'){
+        banner.classList.add('err');
+        icon.textContent='🚫';
+        status.textContent='Location is BLOCKED for this site';
+        hint.innerHTML='Tap the lock icon next to the URL → Permissions → Location → Allow, then reload';
+        return;
+      }
+    }catch(e){}
+  }
+  // Now actually request — this fires the prompt because it is user-initiated
+  navigator.geolocation.getCurrentPosition(
+    p=>{
+      userLat=p.coords.latitude; userLng=p.coords.longitude;
+      destLat=userLat+0.005; destLng=userLng+0.003;
+      gpsAcquired=true;
+      banner.classList.add('ok'); banner.classList.remove('err');
+      icon.textContent='✅';
+      status.textContent='GPS active';
+      hint.textContent=userLat.toFixed(5)+', '+userLng.toFixed(5);
+      const ft=document.getElementById('fromText'); if(ft) ft.textContent='📍 '+userLat.toFixed(5)+', '+userLng.toFixed(5);
+      const gp=document.getElementById('sosGpsText'); if(gp) gp.textContent='Live · '+userLat.toFixed(5)+', '+userLng.toFixed(5);
+      const sl=document.getElementById('sosLocText'); if(sl) sl.textContent='GPS · '+userLat.toFixed(5)+', '+userLng.toFixed(5);
+      // Recenter maps if open
+      if(trackMap){trackMap.setView([userLat,userLng],15); if(trackMarker) trackMarker.setLatLng([userLat,userLng]);}
+      if(sosMap){sosMap.setView([userLat,userLng],16); if(sosMarker) sosMarker.setLatLng([userLat,userLng]);}
+    },
+    err=>{
+      banner.classList.add('err');
+      icon.textContent= err.code===1 ? '🚫' : '⚠️';
+      if(err.code===1){
+        status.textContent='Permission denied';
+        hint.innerHTML='Open Chrome → Site settings → Location → Allow for this site';
+      }else if(err.code===2){
+        status.textContent='Location unavailable';
+        hint.textContent='Turn on phone location services & try again';
+      }else if(err.code===3){
+        status.textContent='Request timed out';
+        hint.textContent='Tap Allow again to retry';
+      }else{
+        status.textContent='GPS error: '+err.message;
+        hint.textContent='Try again or use manual entry';
+      }
+    },
+    {enableHighAccuracy:true, timeout:15000, maximumAge:0}
+  );
+}
+
 // Kick off on load
 requestGPS();
 
@@ -1272,7 +1355,15 @@ function go(id){
   navMark(id);
 
   // Screen-specific init
-  if(id==='s7') requestGPS();
+  if(id==='s7'){
+    // Sync banner state with current GPS status
+    if(gpsAcquired){
+      const b=document.getElementById('gpsBanner');
+      if(b){b.classList.add('ok');document.getElementById('gpsIcon').textContent='✅';
+            document.getElementById('gpsStatus').textContent='GPS active';
+            document.getElementById('gpsHint').textContent=userLat.toFixed(5)+', '+userLng.toFixed(5);}
+    }
+  }
   if(id==='s8') initTracking();
   if(id==='s9') confetti();
   if(id==='s10') startEsc();
