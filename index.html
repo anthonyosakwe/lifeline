@@ -21,7 +21,7 @@
 <h3 style="display: inline;">📁 Supporting documents</h3> &emsp;PRD, research, design files &emsp; → <a href="https://drive.google.com/drive/folders/1V06a5l_t_API2en-50c_yjeJstFNpbzb" target="_blank" rel="noopener noreferrer">Google Drive folder</a>
 <br><br>
 
-<h3 style="display: inline;">📄 Build documentation</h3> &emsp;<a href="http://anthonyosakwe.github.io/lifeline/lifeline-build-docs/" target="_blank" rel="noopener noreferrer">lifeline-build-docs.html</a>
+<h3 style="display: inline;">📄 Build documentation</h3> &emsp;<a href="https://github.io" target="_blank" rel="noopener noreferrer">lifeline-build-docs.html</a>
 <br><br>
 
 <hr />
@@ -34,6 +34,59 @@
 
 <hr />
 
+<h2>🚀 Demo Cheatsheet (for judges)</h2>
+
+<p>Open the <a href="https://anthonyosakwe.github.io/lifeline/lifelineapp/" target="_blank" rel="noopener noreferrer">live app</a> on a phone, then:</p>
+
+<br />
+
+<p><strong>Tap Get started</strong><br />Walk through onboarding</p>
+
+<br />
+
+<p><strong>OTP code</strong><br />Use <code>8484</code> (any other code triggers the failure path)</p>
+
+<br />
+
+<p><strong>Home screen</strong><br />Hold the red <strong>SOS</strong> button for 3 seconds → emergency activates</p>
+
+<br />
+
+<p><strong>Start safe arrival card</strong><br />Tap <strong>Allow</strong> on the GPS banner → real OpenStreetMap loads with your live location</p>
+
+<br />
+
+<p><strong>Bottom demo nav</strong><br />Jump instantly between flows: 🔑 Onboard · 🏠 Safe Arrival · 🚨 SOS · ⚠️ Failures</p>
+
+<br />
+
+<p><strong>Three failure paths to demo:</strong> wrong OTP code · location permission denied · trip ETA overdue</p>
+
+<p><strong>Two delighters:</strong> confetti on safe arrival · shake-to-SOS hint</p>
+
+<hr />
+
+<h2>🛠️ Tech Highlights</h2>
+
+<ul>
+<li><strong>Single-file HTML app</strong> (~210 KB) — deploy to any static host</li>
+<li><strong>Real OpenStreetMap</strong> via Leaflet — embedded inline, <strong>zero CDN dependencies</strong></li>
+<li><strong>Works on the worst Nigerian networks:</strong> library is self-hosted, tiles load progressively, error fallbacks for failed tiles</li>
+<li><strong>Real GPS</strong> via <code>navigator.geolocation</code> + on-screen permission flow</li>
+<li><strong>Native haptics</strong> for SOS (Android <code>navigator.vibrate</code>)</li>
+<li><strong>Shake detection</strong> via DeviceMotion API</li>
+<li>No build step. No dependencies. No backend (yet — V2 will wire to Supabase like SafeSignal).</li>
+</ul>
+
+<hr />
+
+<h2>👥 Group 39</h2>
+
+<p>Built with ☕ + ⚡ over 4 weeks.</p>
+
+<hr />
+
+<p><em>If you have access issues with the Drive folder, contact the team — link sharing is set to "Anyone with the link · Viewer."</em></p>
 <h2>🚀 Demo Cheatsheet (for judges)</h2>
 
 <p>Open the <a href="https://anthonyosakwe.github.io/lifeline/lifelineapp/" target="_blank" rel="noopener noreferrer">live app</a> on a phone, then:</p>
