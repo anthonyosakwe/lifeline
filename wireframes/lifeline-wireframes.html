@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LifeLine — Low-Fidelity Wireframes</title>
+<style>
+:root{
+  --paper:#FAF8F3;
+  --ink:#1A1A1A;
+  --grey-1:#E8E5DD;
+  --grey-2:#C8C2B5;
+  --grey-3:#8A8478;
+  --accent:#FF6B35;
+  --note:#4A6FA5;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:var(--paper);
+  font-family:'Courier New',Courier,monospace;
+  color:var(--ink);
+  padding:40px 24px;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.025) 1px, transparent 1px);
+  background-size:24px 24px;
+  min-height:100vh;
+}
+
+.doc{
+  max-width:1400px;
+  margin:0 auto;
+}
+
+.doc-header{
+  text-align:center;
+  margin-bottom:48px;
+  padding-bottom:24px;
+  border-bottom:2px dashed var(--grey-2);
+}
+.doc-title{font-size:36px;font-weight:700;letter-spacing:-1px;margin-bottom:8px;}
+.brand-logo{width:200px;height:auto;margin:0 auto 12px;display:block;background:white;padding:8px;border-radius:16px;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--grey-2);}
+.doc-sub{
+  font-size:14px;
+  color:var(--grey-3);
+  letter-spacing:1px;
+}
+.doc-meta{
+  margin-top:14px;
+  font-size:12px;
+  color:var(--grey-3);
+}
+
+.flow-section{
+  margin-bottom:56px;
+}
+.flow-header{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:24px;
+  padding-bottom:8px;
+  border-bottom:2px solid var(--ink);
+}
+.flow-num{
+  background:var(--ink);
+  color:var(--paper);
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:16px;
+  font-weight:700;
+}
+.flow-title{
+  font-size:22px;
+  font-weight:700;
+  letter-spacing:-.5px;
+}
+.flow-desc{
+  font-size:13px;
+  color:var(--grey-3);
+  margin-left:auto;
+}
+
+.screens-row{
+  display:flex;
+  gap:24px;
+  flex-wrap:wrap;
+  justify-content:flex-start;
+  align-items:flex-start;
+}
+
+/* ── Phone frame (wireframe style) ── */
+.wf{
+  width:200px;
+  flex-shrink:0;
+  position:relative;
+}
+
+.wf-arrow{
+  position:absolute;
+  right:-22px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:24px;
+  color:var(--grey-3);
+  font-weight:700;
+}
+
+.wf-frame{
+  background:white;
+  border:2px solid var(--ink);
+  border-radius:24px;
+  padding:8px 6px;
+  position:relative;
+  box-shadow:3px 3px 0 var(--grey-2);
+}
+
+.wf-notch{
+  width:60px;
+  height:14px;
+  background:var(--ink);
+  border-radius:0 0 10px 10px;
+  margin:0 auto 4px;
+}
+
+.wf-content{
+  background:white;
+  border:1px solid var(--grey-2);
+  border-radius:8px;
+  padding:10px 8px;
+  min-height:340px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  font-size:9px;
+  position:relative;
+}
+
+.wf-label{
+  text-align:center;
+  font-size:11px;
+  font-weight:700;
+  margin-top:10px;
+  letter-spacing:.5px;
+}
+.wf-id{
+  text-align:center;
+  font-size:10px;
+  color:var(--grey-3);
+  margin-top:2px;
+}
+
+/* ── Wireframe atoms ── */
+.box{
+  border:1.5px solid var(--ink);
+  background:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:6px;
+  text-align:center;
+  font-size:9px;
+  font-weight:600;
+}
+.box-filled{
+  background:var(--ink);
+  color:white;
+  border-color:var(--ink);
+}
+.box-grey{ background:var(--grey-1); }
+.box-accent{ background:var(--accent); color:white; border-color:var(--accent); }
+
+.placeholder{
+  background:var(--grey-1);
+  border:1px solid var(--grey-2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:9px;
+  color:var(--grey-3);
+}
+
+.bar{
+  height:8px;
+  background:var(--grey-1);
+  border-radius:2px;
+}
+.bar.dark{ background:var(--grey-2); }
+.bar.short{ width:60%; }
+.bar.medium{ width:80%; }
+
+.line{
+  height:1px;
+  background:var(--grey-2);
+}
+
+.circle{
+  border-radius:50%;
+  background:var(--grey-1);
+  border:1px solid var(--grey-2);
+}
+
+.btn-wf{
+  border:1.5px solid var(--ink);
+  background:white;
+  padding:8px;
+  text-align:center;
+  font-size:9px;
+  font-weight:600;
+  border-radius:4px;
+  margin-top:auto;
+}
+.btn-wf.primary{ background:var(--ink); color:white; }
+.btn-wf.danger{ background:#FF3B30; color:white; border-color:#FF3B30; }
+.btn-wf.safe{ background:#34C759; color:white; border-color:#34C759; }
+
+.row-flex{ display:flex; gap:4px; }
+.col-flex{ display:flex; flex-direction:column; gap:6px; }
+
+.note{
+  position:absolute;
+  background:#FFF9C4;
+  border:1px solid #E6CC00;
+  padding:4px 8px;
+  font-size:9px;
+  border-radius:3px;
+  color:#5C5400;
+  white-space:nowrap;
+  z-index:10;
+  font-weight:600;
+  transform:rotate(-2deg);
+}
+.note.top{ top:-12px; right:-8px; }
+.note.bottom{ bottom:-8px; left:-4px; transform:rotate(1deg); }
+
+.fail-tag{
+  position:absolute;
+  top:-10px;
+  right:-10px;
+  background:#FF3B30;
+  color:white;
+  font-size:9px;
+  font-weight:700;
+  padding:3px 6px;
+  border-radius:3px;
+  z-index:5;
+}
+.delight-tag{
+  position:absolute;
+  top:-10px;
+  right:-10px;
+  background:#FFD60A;
+  color:#1A1A1A;
+  font-size:9px;
+  font-weight:700;
+  padding:3px 6px;
+  border-radius:3px;
+  z-index:5;
+}
+
+.legend{
+  margin-top:48px;
+  padding:24px;
+  background:white;
+  border:2px solid var(--ink);
+  border-radius:8px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:24px;
+  font-size:12px;
+}
+.legend-item{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.legend-key{
+  width:24px;
+  height:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:10px;
+  font-weight:700;
+  border-radius:3px;
+}
+
+@media (max-width:900px){
+  .screens-row{ justify-content:center; }
+  .wf-arrow{ display:none; }
+}
+</style>
+</head>
+<body>
+
+<div class="doc">
+
+<div class="doc-header">
+  <img class="brand-logo" src="data:image/jpeg;base64,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" alt="LifeLine logo" />
+  <div class="doc-sub">Low-Fidelity Wireframes · 12 Screens · 3 Flows · 3 Failure Paths · 2 Delighters</div>
+  <div class="doc-meta">TS Academy · Phoenix Cohort · Group 39 · Capstone · May 2026</div>
+</div>
+
+<!-- ─────────── FLOW 1: ONBOARDING ─────────── -->
+<div class="flow-section">
+  <div class="flow-header">
+    <div class="flow-num">1</div>
+    <div class="flow-title">Onboarding Flow</div>
+    <div class="flow-desc">Splash → Intro slides → OTP verification → Trusted contacts</div>
+  </div>
+
+  <div class="screens-row">
+
+    <!-- S1: SPLASH -->
+    <div class="wf">
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content" style="justify-content:center;align-items:center;gap:14px;">
+          <div class="circle" style="width:60px;height:60px;border:2px solid var(--ink);"></div>
+          <div style="font-weight:700;font-size:14px;">LIFELINE</div>
+          <div class="bar short" style="background:var(--grey-2);"></div>
+          <div style="margin-top:20px;width:100%;">
+            <div class="btn-wf primary">Get Started</div>
+            <div class="btn-wf" style="margin-top:6px;border:none;color:var(--grey-3);">Already have account</div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-label">SPLASH</div>
+      <div class="wf-id">S1</div>
+      <div class="wf-arrow">→</div>
+    </div>
+
+    <!-- S2: ONBOARDING 1 -->
+    <div class="wf">
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content">
+          <div class="placeholder" style="height:90px;">[ illo ]</div>
+          <div class="row-flex" style="justify-content:center;margin:6px 0;">
+            <div style="width:14px;height:4px;background:var(--ink);border-radius:2px;"></div>
+            <div style="width:4px;height:4px;background:var(--grey-2);border-radius:2px;"></div>
+            <div style="width:4px;height:4px;background:var(--grey-2);border-radius:2px;"></div>
+          </div>
+          <div class="bar dark medium" style="height:10px;"></div>
+          <div class="bar dark short" style="height:10px;"></div>
+          <div class="col-flex" style="margin-top:8px;">
+            <div class="bar"></div><div class="bar"></div><div class="bar short"></div>
+          </div>
+          <div class="btn-wf primary">Continue</div>
+          <div class="btn-wf" style="border:none;color:var(--grey-3);">Skip</div>
+        </div>
+      </div>
+      <div class="wf-label">ONBOARDING 1</div>
+      <div class="wf-id">S2 · "Your safety, proactively"</div>
+      <div class="wf-arrow">→</div>
+    </div>
+
+    <!-- S3: OTP -->
+    <div class="wf">
+      <div class="note top">FAIL PATH: wrong code</div>
+      <div class="fail-tag">!</div>
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content">
+          <div class="circle" style="width:20px;height:20px;"></div>
+          <div class="bar dark medium" style="height:10px;margin-top:6px;"></div>
+          <div class="bar short"></div>
+          <div class="row-flex" style="margin-top:8px;">
+            <div class="box" style="width:34px;">+234</div>
+            <div class="box" style="flex:1;">phone…</div>
+          </div>
+          <div class="btn-wf primary" style="margin-top:0;">Send OTP</div>
+          <div class="row-flex" style="margin-top:8px;">
+            <div class="box" style="flex:1;height:24px;">_</div>
+            <div class="box" style="flex:1;height:24px;">_</div>
+            <div class="box" style="flex:1;height:24px;">_</div>
+            <div class="box" style="flex:1;height:24px;">_</div>
+          </div>
+          <div style="font-size:8px;color:#FF3B30;text-align:center;">⚠ wrong code: X tries left</div>
+        </div>
+      </div>
+      <div class="wf-label">OTP VERIFY</div>
+      <div class="wf-id">S3 · correct = 8484</div>
+      <div class="wf-arrow">→</div>
+    </div>
+
+    <!-- S4: ONBOARDING 2 -->
+    <div class="wf">
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content">
+          <div class="placeholder" style="height:90px;">[ map illo ]</div>
+          <div class="row-flex" style="justify-content:center;margin:6px 0;">
+            <div style="width:4px;height:4px;background:var(--grey-2);border-radius:2px;"></div>
+            <div style="width:14px;height:4px;background:var(--ink);border-radius:2px;"></div>
+            <div style="width:4px;height:4px;background:var(--grey-2);border-radius:2px;"></div>
+          </div>
+          <div class="bar dark medium" style="height:10px;"></div>
+          <div class="bar dark short" style="height:10px;"></div>
+          <div class="col-flex" style="margin-top:8px;">
+            <div class="bar"></div><div class="bar"></div><div class="bar short"></div>
+          </div>
+          <div class="btn-wf primary">Continue</div>
+          <div class="btn-wf" style="border:none;color:var(--grey-3);">Skip</div>
+        </div>
+      </div>
+      <div class="wf-label">ONBOARDING 2</div>
+      <div class="wf-id">S4 · "Share your journey"</div>
+      <div class="wf-arrow">→</div>
+    </div>
+
+    <!-- S5: CONTACTS -->
+    <div class="wf">
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content">
+          <div class="circle" style="width:20px;height:20px;"></div>
+          <div class="bar dark medium" style="height:10px;margin-top:6px;"></div>
+          <div class="bar short"></div>
+          <div class="col-flex" style="margin-top:8px;">
+            <div class="box" style="justify-content:flex-start;gap:6px;padding:6px;">
+              <div class="circle" style="width:18px;height:18px;background:var(--grey-2);"></div>
+              <div style="flex:1;text-align:left;">Amaka · ✓</div>
+            </div>
+            <div class="box" style="justify-content:flex-start;gap:6px;padding:6px;">
+              <div class="circle" style="width:18px;height:18px;background:var(--grey-2);"></div>
+              <div style="flex:1;text-align:left;">Tunde · ⏳</div>
+            </div>
+            <div class="box" style="border-style:dashed;color:var(--grey-3);">＋ Add contact</div>
+          </div>
+          <div class="btn-wf primary">Finish setup</div>
+        </div>
+      </div>
+      <div class="wf-label">TRUSTED CONTACTS</div>
+      <div class="wf-id">S5 · consent required</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─────────── FLOW 2: SAFE ARRIVAL ─────────── -->
+<div class="flow-section">
+  <div class="flow-header">
+    <div class="flow-num">2</div>
+    <div class="flow-title">Safe Arrival Flow</div>
+    <div class="flow-desc">Home → Share trip → Live tracking → Confirmed safe (with delighter)</div>
+  </div>
+
+  <div class="screens-row">
+
+    <!-- S6: HOME -->
+    <div class="wf">
+      <div class="delight-tag">★</div>
+      <div class="note top">DELIGHTER: shake-to-SOS</div>
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content">
+          <div class="bar short"></div>
+          <div class="bar dark medium" style="height:10px;"></div>
+          <div class="row-flex" style="margin-top:4px;">
+            <div class="box" style="font-size:8px;padding:3px 6px;">2 contacts</div>
+            <div class="box" style="font-size:8px;padding:3px 6px;">4 trips</div>
+          </div>
+          <div style="display:flex;justify-content:center;margin:14px 0;">
+            <div class="circle" style="width:72px;height:72px;background:#FF3B30;border-color:#FF3B30;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:14px;">SOS</div>
+          </div>
+          <div class="box" style="padding:6px;justify-content:flex-start;gap:6px;">
+            <div class="placeholder" style="width:20px;height:20px;">🛫</div>
+            <div style="flex:1;text-align:left;">Start safe arrival ›</div>
+          </div>
+          <div class="row-flex" style="margin-top:auto;">
+            <div class="box" style="flex:1;padding:8px;flex-direction:column;">
+              <div style="font-weight:700;font-size:14px;">2</div>
+              <div style="font-size:7px;color:var(--grey-3);">CONTACTS</div>
+            </div>
+            <div class="box" style="flex:1;padding:8px;flex-direction:column;">
+              <div style="font-weight:700;font-size:14px;">4</div>
+              <div style="font-size:7px;color:var(--grey-3);">TRIPS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-label">HOME</div>
+      <div class="wf-id">S6 · hold SOS 3s = emergency</div>
+      <div class="wf-arrow">→</div>
+    </div>
+
+    <!-- S7: SHARE TRIP -->
+    <div class="wf">
+      <div class="fail-tag">!</div>
+      <div class="note top">FAIL: location denied</div>
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content">
+          <div class="circle" style="width:20px;height:20px;"></div>
+          <div class="bar dark medium" style="height:10px;margin-top:6px;"></div>
+          <div class="bar short"></div>
+          <div class="box" style="padding:8px;flex-direction:column;align-items:flex-start;gap:6px;">
+            <div style="display:flex;gap:6px;align-items:center;font-size:8px;">
+              <div class="circle" style="width:8px;height:8px;background:var(--ink);"></div>
+              <span>From: current</span>
+            </div>
+            <div class="line" style="width:100%;"></div>
+            <div style="display:flex;gap:6px;align-items:center;font-size:8px;">
+              <div class="circle" style="width:8px;height:8px;background:none;"></div>
+              <span>To: Home, Yaba</span>
+            </div>
+          </div>
+          <div style="font-size:8px;font-weight:700;">ETA</div>
+          <div class="row-flex">
+            <div class="box" style="flex:1;font-size:8px;">15m</div>
+            <div class="box box-filled" style="flex:1;font-size:8px;">30m</div>
+            <div class="box" style="flex:1;font-size:8px;">60m</div>
+          </div>
+          <div class="box" style="padding:6px;font-size:8px;">Sharing with: AM, TJ</div>
+          <div class="btn-wf primary">Share with contacts</div>
+        </div>
+      </div>
+      <div class="wf-label">SHARE TRIP</div>
+      <div class="wf-id">S7 · destination + ETA</div>
+      <div class="wf-arrow">→</div>
+    </div>
+
+    <!-- S8: LIVE TRACKING -->
+    <div class="wf">
+      <div class="fail-tag">!</div>
+      <div class="note top">FAIL: ETA overdue</div>
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content" style="padding:0;">
+          <div class="placeholder" style="height:120px;border-radius:7px 7px 0 0;border:none;border-bottom:1px solid var(--grey-2);position:relative;">
+            [ live map ]
+            <div style="position:absolute;top:4px;right:4px;background:#FF3B30;color:white;font-size:7px;padding:2px 4px;border-radius:2px;">● LIVE</div>
+          </div>
+          <div style="padding:8px;display:flex;flex-direction:column;gap:6px;">
+            <div style="font-size:7px;color:var(--grey-3);text-align:center;">ARRIVING IN</div>
+            <div style="font-size:22px;font-weight:700;text-align:center;letter-spacing:-1px;">28:14</div>
+            <div style="font-size:8px;color:var(--grey-3);text-align:center;">Home, Yaba</div>
+            <div class="box" style="padding:4px;font-size:8px;">
+              <div class="row-flex">
+                <div class="circle" style="width:14px;height:14px;background:var(--grey-2);"></div>
+                <div class="circle" style="width:14px;height:14px;background:var(--grey-2);margin-left:-4px;"></div>
+              </div>
+              <span style="margin-left:6px;flex:1;text-align:left;">2 watching</span>
+              <span>●LIVE</span>
+            </div>
+            <div class="btn-wf safe" style="font-size:9px;">✓ I've arrived</div>
+            <div class="btn-wf" style="font-size:9px;border-color:var(--grey-2);color:var(--grey-3);">Cancel trip</div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-label">LIVE TRACKING</div>
+      <div class="wf-id">S8 · real OSM map, countdown</div>
+      <div class="wf-arrow">→</div>
+    </div>
+
+    <!-- S9: SAFE CONFIRMED -->
+    <div class="wf">
+      <div class="delight-tag">★</div>
+      <div class="note top">DELIGHTER: confetti 🎉</div>
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content" style="justify-content:center;align-items:center;gap:12px;">
+          <div class="circle" style="width:60px;height:60px;background:#A8F0D1;border-color:#34C759;display:flex;align-items:center;justify-content:center;font-size:24px;">✓</div>
+          <div style="font-weight:700;font-size:14px;text-align:center;">You're safe! 🎉</div>
+          <div class="bar short" style="background:var(--grey-2);"></div>
+          <div class="col-flex" style="width:100%;">
+            <div class="box" style="padding:5px;font-size:8px;">
+              <div class="circle" style="width:16px;height:16px;background:var(--grey-2);"></div>
+              <div style="flex:1;text-align:left;margin-left:4px;">Amaka · seen ✓</div>
+              <span>😮‍💨</span>
+            </div>
+            <div class="box" style="padding:5px;font-size:8px;">
+              <div class="circle" style="width:16px;height:16px;background:var(--grey-2);"></div>
+              <div style="flex:1;text-align:left;margin-left:4px;">Tunde · 'Relieved!'</div>
+              <span>🙏</span>
+            </div>
+          </div>
+          <div class="btn-wf primary" style="margin-top:auto;width:100%;">Back to home</div>
+        </div>
+      </div>
+      <div class="wf-label">SAFE CONFIRMED</div>
+      <div class="wf-id">S9 · session closed + reactions</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─────────── FLOW 3: EMERGENCY ─────────── -->
+<div class="flow-section">
+  <div class="flow-header">
+    <div class="flow-num">3</div>
+    <div class="flow-title">Emergency / SOS Flow</div>
+    <div class="flow-desc">SOS Hold → Active alert → Contact perspective → Resolved</div>
+  </div>
+
+  <div class="screens-row">
+
+    <!-- S10: SOS ACTIVE -->
+    <div class="wf">
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content" style="background:#FFF5F5;border-color:#FFD0CC;">
+          <div class="box" style="background:#FF3B30;color:white;border-color:#FF3B30;font-size:8px;width:fit-content;padding:3px 8px;">● SOS ACTIVATED</div>
+          <div style="font-size:8px;color:var(--grey-3);">Escalation in</div>
+          <div style="font-size:32px;font-weight:700;color:#FF3B30;letter-spacing:-1px;line-height:1;">2:45</div>
+          <div class="col-flex" style="margin-top:8px;flex:1;">
+            <div class="box" style="background:#FFE5E3;border-color:#FFC0BB;padding:6px;font-size:8px;align-items:flex-start;flex-direction:column;">
+              <span style="font-size:7px;color:var(--grey-3);">📡 GPS</span>
+              <span>Live · sharing</span>
+            </div>
+            <div class="box" style="background:#FFE5E3;border-color:#FFC0BB;padding:6px;font-size:8px;align-items:flex-start;flex-direction:column;">
+              <span style="font-size:7px;color:var(--grey-3);">👥 CONTACTS</span>
+              <span>Amaka & Tunde alerted</span>
+            </div>
+          </div>
+          <div class="btn-wf" style="border-color:var(--grey-2);color:var(--ink);font-size:9px;">I'm safe — cancel</div>
+        </div>
+      </div>
+      <div class="wf-label">SOS ACTIVE</div>
+      <div class="wf-id">S10 · 2:45 countdown to escalation</div>
+      <div class="wf-arrow">→</div>
+    </div>
+
+    <!-- S11: CONTACT VIEW -->
+    <div class="wf">
+      <div class="note bottom" style="background:#E3F2FD;border-color:#90CAF9;color:#0D47A1;">CONTACT'S phone</div>
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content" style="padding:0;">
+          <div class="placeholder" style="height:110px;border-radius:7px 7px 0 0;border:none;background:#FFE5E3;position:relative;">
+            [ red map ]
+            <div style="position:absolute;top:4px;right:4px;background:#FF3B30;color:white;font-size:7px;padding:2px 4px;border-radius:2px;">SOS LIVE</div>
+          </div>
+          <div style="padding:8px;display:flex;flex-direction:column;gap:6px;">
+            <div class="row-flex" style="align-items:center;">
+              <div class="circle" style="width:32px;height:32px;background:#FF3B30;border-color:#FF3B30;color:white;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;">AU</div>
+              <div style="flex:1;">
+                <div style="font-size:9px;font-weight:700;">Ada Umeh — SOS</div>
+                <div style="font-size:7px;color:#FF3B30;">● Live · 3 min ago</div>
+              </div>
+            </div>
+            <div class="box" style="padding:5px;font-size:8px;align-items:flex-start;flex-direction:column;">
+              <span style="font-size:7px;color:var(--grey-3);">LAST LOCATION</span>
+              <span>Herbert Macaulay, Yaba</span>
+            </div>
+            <div class="row-flex">
+              <div class="btn-wf safe" style="flex:1;font-size:8px;padding:6px;">📞 Call</div>
+              <div class="btn-wf" style="flex:1;font-size:8px;padding:6px;">💬 Msg</div>
+              <div class="btn-wf danger" style="flex:1;font-size:8px;padding:6px;">🚨 Esc</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-label">CONTACT VIEW</div>
+      <div class="wf-id">S11 · what Amaka/Tunde sees</div>
+      <div class="wf-arrow">→</div>
+    </div>
+
+    <!-- S12: RESOLVED -->
+    <div class="wf">
+      <div class="wf-frame">
+        <div class="wf-notch"></div>
+        <div class="wf-content" style="justify-content:center;align-items:center;gap:12px;">
+          <div class="circle" style="width:60px;height:60px;background:var(--grey-1);border-color:var(--grey-2);display:flex;align-items:center;justify-content:center;font-size:22px;">🔒</div>
+          <div style="font-weight:700;font-size:14px;text-align:center;">Emergency resolved</div>
+          <div class="bar short" style="background:var(--grey-2);"></div>
+          <div class="col-flex" style="width:100%;">
+            <div class="box" style="padding:5px;font-size:8px;">
+              <div class="circle" style="width:16px;height:16px;background:var(--grey-2);"></div>
+              <div style="flex:1;text-align:left;margin-left:4px;">Amaka · cancelled</div>
+              <span>🙌</span>
+            </div>
+            <div class="box" style="padding:5px;font-size:8px;">
+              <div class="circle" style="width:16px;height:16px;background:var(--grey-2);"></div>
+              <div style="flex:1;text-align:left;margin-left:4px;">Tunde · 'Thank God!'</div>
+              <span>😮‍💨</span>
+            </div>
+          </div>
+          <div class="btn-wf primary" style="margin-top:auto;width:100%;">Back to home</div>
+        </div>
+      </div>
+      <div class="wf-label">EMERGENCY RESOLVED</div>
+      <div class="wf-id">S12 · all clear</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─────────── LEGEND ─────────── -->
+<div class="legend">
+  <div style="font-weight:700;font-size:13px;width:100%;">Legend</div>
+  <div class="legend-item">
+    <div class="legend-key" style="background:#FF3B30;color:white;">!</div>
+    <span>Failure path</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-key" style="background:#FFD60A;color:#1A1A1A;">★</div>
+    <span>Delighter</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-key" style="background:#FFF9C4;border:1px solid #E6CC00;font-size:10px;">📝</div>
+    <span>Design annotation</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-key" style="background:var(--ink);color:white;">▮</div>
+    <span>Primary action</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-key" style="background:#34C759;color:white;">✓</div>
+    <span>Safe state action</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-key" style="background:white;border:1.5px solid #1A1A1A;color:#1A1A1A;">▢</div>
+    <span>Secondary action</span>
+  </div>
+  <div style="width:100%;font-size:12px;color:var(--grey-3);margin-top:8px;line-height:1.6;">
+    <strong>Wireframe principles applied:</strong> dark-first design (real app uses navy bg) · sub-60s onboarding · 3-second SOS hold to prevent false alarms · 2:45 escalation gives user time to cancel · contact consent required · prevention-first (safe arrival used more than SOS) · works on Nigerian 3G (single HTML, embedded map library, OSM tiles load progressively).
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>
