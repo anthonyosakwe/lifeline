@@ -193,7 +193,7 @@ mermaid.initialize({
                 
                 %% Path B: Offline-First Failuresafe Sync Flow
                 BadNet -->|No Network| Storage
-                Storage "-.->|Incremental" HTTP Payload Retry| DB
+                Storage -.->|Incremental" HTTP Payload Retry| DB
 
                 %% Automated Edge Alert Layer
                 DB -->|Trigger: ETA Expired OR SOS Active| EdgeFunc
@@ -207,64 +207,31 @@ mermaid.initialize({
         <!-- Panel 2: Product Roadmap Timeline Engine -->
         <div id="strategic-roadmap" class="map-panel">
             <div class="mermaid">
-graph TD
+            gantt
+                title LifeLine V2 Backend Migration & Product Roadmap (2-Year Strategy)
+                dateFormat  YYYY-MM
+                axisFormat  Q%q %Y
 
-%% Base styling definitions
-classDef client fill:#1f242c,stroke:#30363d,stroke-width:2px,color:#c9d1d9;
-classDef internet fill:#161b22,stroke:#58a6ff,stroke-width:2px,color:#58a6ff;
-classDef edge fill:#161b22,stroke:#da3633,stroke-width:2px,color:#da3633;
-classDef data fill:#21262d,stroke:#3fb950,stroke-width:2px,color:#3fb950;
-classDef offline fill:#2c1f1f,stroke:#ff7b72,stroke-width:1px,color:#ff7b72,stroke-dasharray:5 5;
+                section Foundation & Auth (Y1: Q1-Q2)
+                Supabase Stack & DB Schema Setup      :active, p1, 2026-06, 30d
+                WhatsApp & SMS Passwordless Auth      :p2, after p1, 45d
+                ~210KB Engine Optimization            :p3, after p2, 30d
 
-%% Core Components
-subgraph Frontend [LifeLine Client - ~210KB Engine]
-    App[Single-File Web App]
-    Storage[(Browser localStorage)]
-end
-class App,Storage client;
+                section Realtime & Failuresafe (Y1: Q3-Q4)
+                WebSockets Live Coordinate Streams    :p4, 2026-10, 60d
+                Browser localStorage Sync Logic      :p5, after p4, 45d
+                Incremental HTTP Payload Retry Engine :p6, after p5, 45d
 
-subgraph ConnectionState [Network Router Logic]
-    GoodNet{Network Signal Strong?}
-    BadNet[Low-Data / No-Signal Mode]
-end
-class GoodNet internet;
-class BadNet offline;
+                section Edge & Telephony (Y2: Q1-Q2)
+                Supabase Edge Functions Dev           :p7, 2027-04, 60d
+                Termii/Twilio Gateway Integration     :p8, after p7, 45d
+                Automated Voice & SMS Fallback Testing :p9, after p8, 30d
 
-subgraph Backend [Supabase Cloud Stack]
-    Auth[WhatsApp/SMS Passwordless Auth]
-    Realtime[WebSockets Real-Time Channel]
-    DB[(PostgreSQL Database Layer)]
-    EdgeFunc[Supabase Edge Functions]
-end
-class Auth,Realtime internet;
-class DB data;
-class EdgeFunc edge;
-
-subgraph Telephony [External Alert Gateways]
-    SMS[Termii/Twilio API Gateway]
-end
-class SMS edge;
-
-%% Architecture Logic
-App --> GoodNet
-App --> BadNet
-
-%% Path A: Strong Connectivity
-GoodNet -->|Yes| Auth
-GoodNet -->|Yes| Realtime
-Realtime <-->|Live Stream Coordinates| DB
-
-%% Path B: Offline-first
-BadNet -->|No Network| Storage
-Storage -.->|Incremental HTTP Payload Retry| DB
-
-%% Emergency Alert Layer
-DB -->|ETA Expired OR SOS Active| EdgeFunc
-EdgeFunc -->|Automated Voice / Text Payload| SMS
-SMS -->|Direct Telecom Delivery| TrustedContact[Trusted Circle Handsets]
-
-class TrustedContact client;
-</div>
+                section Scale & Hardening (Y2: Q3-Q4)
+                Low-Bandwidth Chaos Engineering       :p10, 2027-10, 45d
+                Beta Testing in Low-Signal Zones      :p11, after p10, 45d
+                V2 Production Migration & Launch      :milestone, active, 2028-03-31, 0d
+            </div>
         </div>
 
     </div>
