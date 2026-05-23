@@ -10,7 +10,7 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
 
 ## 🔗 Project Links
 
-*   **📱 Live App:** [anthonyosakwe.github.io/lifeline/lifelineapp/](https://github.io)
+*   **📱 Live App:** [anthonyosakwe.github.io/lifeline/lifelineapp/](/lifelineapp)
 *   **📐 Wireframes (lo-fi):** [anthonyosakwe.github.io/lifeline/wireframes/](https://github.io)
 *   **📁 Supporting Documents (PRD, Research, Design):** [Google Drive Folder](https://google.com)
 *   **📄 Build Documentation:** [lifeline-build-docs](https://github.io)
