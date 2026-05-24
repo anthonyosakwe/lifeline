@@ -34,7 +34,7 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
 *   **📱 The Pitch Deck:**
 *   ![Our Pitch Deck](LifeLine_Pitch_Deck_v4_FINAL.pdf)
 
-*    [Download Slide Deck here] (LifeLine_Pitch_Deck_v4_FINAL.pptx)
+*    [Download Slide Deck here](LifeLine_Pitch_Deck_v4_FINAL.pptx)
 
 
 
