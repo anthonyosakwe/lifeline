@@ -1,4 +1,4 @@
-# LifeLine Other Doc Links
+# LifeLine Other Doc Links (INDEX)
 
 > Tell your circle you made it home safely — before they have to ask.
 
@@ -11,80 +11,84 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
 ## 🔗 Other Documents links
 
 
-*   **📱 01 - One-pager Brief:** [PDF](dgdgdgdg) 👉[Download doc here](hdhdhd)
+*   **📱 01 - One-pager Brief:** ✅
+    *   [PDF](dgdgdgdg) 👉[Download doc here](hdhdhd)
 
 
-*   **📱 Discovery evidence**
-   >*synthesised insights + raw notes & screenshots*
+*   **📁 02 - Discovery evidence** ✅
+    *>synthesised insights + raw notes & screenshots*
+    * [enter folder here](bdbbdvd)
 
 
-PRD
-Stories. AC, prioritisation, NFRs, edge cases
+*   **📱 03 - PRD** ✅
+    *>Stories. AC, prioritisation, NFRs, edge cases*
+    * [bdbbd](bdhdbd)
 
 
-
-Figma prototype
-Link -+ design system documentation
-
-
-Working demo URL
-Tested in incognito on at least 2 devices
+*    **Figma prototype** ✅
+     *>Link -+ design system documentation*
 
 
-README + architectue
-Run instructions +t boxes-and-arrows diagram
+*    **Working demo URL** ✅
+     *>Tested in incognito on at least 2 devices*
 
 
-
-Test plan + results
-Known limits +tech debt list
+*    **README + architectue** ✅
+     *>Run instructions +t boxes-and-arrows diagram*
 
 
 
-
-Metrics & tracking
-Event plan tied to 2 flows + mock dashboard
-
-
-
-GIM mini-plan
-Positioning onboarding channels rollout.feedback
-
-
-
-Roadmap -+ sprint board +RACI
-Screenshots count as evidence
-
-
-
-Weekly product updates
-4 entries from sprint board history
-
-
-
-lteration/ change log
-At least one before/atfter entry
-
-
-Pitch deck (10 slides)
-+ backup demo video on YouTube unlisted
-
-
-Master Folder
-Shared via single public link
-
-
-Submission form
-https://forms.gle/Pn4VWo7LBJWD3tAK6
+*    **Test plan + results** ✅
+     *>Known limits +tech debt list*
 
 
 
 
+*    **Metrics & tracking** ✅
+     *>Event plan tied to 2 flows + mock dashboard*
+
+
+
+*    **GIM mini-plan** ✅
+     *>Positioning onboarding channels rollout.feedback*
+
+
+
+*    **Team Process Evidence** ✅
+     *>Roadmap -+ sprint board + RACI*
+       *>(Screenshots count as evidence)*
+
+
+*   **📱 Weekly Product Updates:** ✅
+    *>4 entries from sprint board history*
+    * [weekly-updates](lifeline-weekly-updates.md)
 
 
 
 
-*   **📱 Weekly Updates:** [weekly-updates](lifeline-weekly-updates.md)
+*    **lteration/ change log** ✅
+     *>At least one before/atfter entry*
+
+
+*    **Pitch deck (10 slides)** ✅
+      *>+ backup demo video on YouTube unlisted*
+
+
+*    **Master Folder** ✅
+     *>Shared via single public link*
+
+
+*    **Submission form** ✅
+     * (https://forms.gle/Pn4VWo7LBJWD3tAK6)
+
+
+
+
+
+
+
+
+
 
 
 *   **📱 Decision Log:** [Decision Log](LifeLine_Decision_Log_v2_FINAL.md)
