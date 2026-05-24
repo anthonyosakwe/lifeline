@@ -36,10 +36,16 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
 
 *    **04 - Design Pack Figma prototype** ✅
       * >*Link -+ design system documentation*
-        
+
+         * [PDF Wireframes](LifeLine_Low-Fidelity_Wireframes.pdf)
+       
+           
          * [Wire Frames](../wireframes)
            
+           
          * [Product Design](LifeLine_Product_Design_v7_FINAL.html)
+       
+        
 
 *    **05 - Build Evidence Working demo URL** ✅
      * >*MVP scope, Architecture (boxes & arrows), Network resilience*
@@ -52,8 +58,10 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
      * >*lteration/ change log - At least one before/atfter entry*
 
          *[Build Evidence](
+ 
        
          * [Build Documentation](../lifeline-build-docs/)
+ 
          
          * [README](../README.md)
 
@@ -62,27 +70,42 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
 
 *    **Metrics & tracking** ✅
      * >*Event plan tied to 2 flows + mock dashboard*
-        *[Metrics](LifeLine_Metrics_and_Tracking_Plan_v2_FINAL.pdf) 
+         *[Metrics](LifeLine_Metrics_and_Tracking_Plan_v2_FINAL.pdf) 
+
 
 
 *    **GIM mini-plan** ✅
      * >*Positioning onboarding channels rollout.feedback*
-      * [GTM Mini Plan](LifeLine_Metrics_and_Tracking_Plan_v2_FINAL.pdf)
-      
+
+       
+        * [GTM Mini Plan](LifeLine_Metrics_and_Tracking_Plan_v2_FINAL.pdf)
+
+  
+        * GTM Mini Plan:** [GTM Mini Plan](LifeLine_GTM_Mini_Plan_v1_FINAL.md)
+
+
 
 *    **Team Process Evidence** ✅
      * >*(Screenshots count as evidence)*
      
        * *>RACI*✅  👉[RACI](RACI_TABLE-CHART_TSA39_CAPSTONE_PHOENIX.pdf)
 
+
        * *>Roadmap*✅ [👉 easy access at Architecture documents](../lifeline-roadmap-architecture/)
-       
+
+  
        * *>sprint board*✅
           * 👉[Board.v1](Sprint_Board_v1.PDF)
+        
+            
           * 👉[Board.v2](Sprint_Board_v2.PDF)
+        
+            
           * 👉[Board.v3](Sprint_Board_v1.PDF)
+
        
        * *>Decision Log:*✅  👉[Decision Log](Decision-Log.pdf)
+
   
       * *Weekly Product Updates:* ✅
         * >*4 entries from sprint board history*
@@ -91,26 +114,31 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
 
 
 
-*    **
-
 *    **Pitch deck (10 slides)** ✅
-      * *>+ backup demo video on YouTube unlisted*
-*   **📱 The Pitch Deck:** ✅ [PDF](LifeLine_Pitch_Deck_v4_FINAL.pdf)
+      * >*backup demo video on YouTube unlisted*
+
+
+
+         * [PDF](LifeLine_Pitch_Deck_v4_FINAL.pdf)
+
   
-    * 👉   [Download PPTX here](LifeLine_Pitch_Deck_v4_FINAL.pptx)
+         * 👉 [Download PPTX here](LifeLine_Pitch_Deck_v4_FINAL.pptx)
 
 
 
 
 
 *    **Master Folder** ✅
-     * *>Shared via single public link*
-      * [Google Drive Folders](https://drive.google.com/drive/folders/1-Brs6CcKtow2uwkJsMumYC0nG7bJPqE1)
+     * >*Shared via single public link*
+       
+        * [Google Drive Folders](https://drive.google.com/drive/folders/1-Brs6CcKtow2uwkJsMumYC0nG7bJPqE1)
+
 
 
 
 *    **Submission form** ✅
-     * [SUBMIT HERE](https://forms.gle/Pn4VWo7LBJWD3tAK6)
+  
+       * [SUBMIT HERE](https://forms.gle/Pn4VWo7LBJWD3tAK6)
 
 
 
@@ -124,8 +152,6 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
 
 
 
-
-*   **📱 GTM Mini Plan:** [GTM Mini Plan](LifeLine_GTM_Mini_Plan_v1_FINAL.md)
 
 
 *   **📱 Product Design:** [Product Design](LifeLine_Product_Design_v2.html)
