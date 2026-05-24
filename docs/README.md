@@ -65,7 +65,7 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
 
 
 
-         *[Build Evidence](
+         *[Build Evidence](LifeLine_Build_Documentation_v3_FINAL.html)
  
   
          * [Build Documentation](../lifeline-build-docs/)
@@ -74,36 +74,10 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
          * [README](../README.md)
 
 
-## 🎥 Product Demo
 
-[![Watch Demo](thumbnail.png)](https://drive.google.com/file/d/1xvLQVTY8GfSEPbczc7N2SrNpi8LDGfYw/view)
+        ## 🎥 Demo Video
 
-
-
-## 🎥 Demo Video
-
-[▶ Watch Product Demo](https://drive.google.com/file/d/1xvLQVTY8GfSEPbczc7N2SrNpi8LDGfYw/view)
-
-
-[Demo Video](https://drive.google.com/file/d/1xvLQVTY8GfSEPbczc7N2SrNpi8LDGfYw/view)
-
-
-
-[Demo Video](video/VideoCompress_Screen_Recording_20260524_122822_Chrome.mp4)
-
-
-
-<video src="./VideoCompress_Screen_Recording_20260524_122822_Chrome.mp4" width="600" controls></video>
-
-
-
-<video src="VideoCompress_Screen_Recording_20260524_122822_Chrome.mp4" width="100%" controls></video>
-
-
-<video src="../videos/VideoCompress_Screen_Recording_20260524_122822_Chrome.mp4" controls width="100%">
-  Your browser does not support the video tag.
-</video>
-
+          [▶ Watch Product Demo](https://drive.google.com/file/d/1xvLQVTY8GfSEPbczc7N2SrNpi8LDGfYw/view)
 
 
 
