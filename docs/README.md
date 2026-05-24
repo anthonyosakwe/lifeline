@@ -11,7 +11,7 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
 ## 🔗 Other Documents links
 
 
-*   **📱01 - One-pager Brief:** ✅
+*   **📁 01 - One-pager Brief:** ✅
          * [PDF](LifeLine_One_Pager_v3_FINAL.pdf)
 
 
@@ -29,12 +29,14 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
 
 
 
-*   **📱 03 - PRD** ✅
+*   **📁 03 - PRD** ✅
     * >*Stories. AC, prioritisation, NFRs, edge cases*
        * [PRD](LifeLine_PRD_v3_FINAL.pdf)
 
 
-*    **04 - Design Pack Figma prototype** ✅
+
+
+*    **📁 04 - Design Pack Figma prototype** ✅
       * >*Link -+ design system documentation*
 
          * [PDF Wireframes](LifeLine_Low-Fidelity_Wireframes.pdf)
@@ -45,9 +47,12 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
            
          * [Product Design](LifeLine_Product_Design_v7_FINAL.html)
        
-        
 
-*    **05 - Build Evidence Working demo URL** ✅
+
+
+
+
+*    **📁 05 - Build Evidence Working demo URL** ✅
      * >*MVP scope, Architecture (boxes & arrows), Network resilience*
      * >*Data flow, Build & run, Demo ch3at sheet*
      * >*Manual Test Plan & Tesults, Known Limitations+tech debt list*
@@ -57,9 +62,11 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
      * >*README + Run instructions + Architecture - boxes and arrow diagram*
      * >*lteration/ change log - At least one before/atfter entry*
 
+
+
          *[Build Evidence](
  
-       
+  
          * [Build Documentation](../lifeline-build-docs/)
  
          
@@ -68,13 +75,13 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
 
 
 
-*    **Metrics & tracking** ✅
+*    **📁 06 - Metrics & tracking** ✅
      * >*Event plan tied to 2 flows + mock dashboard*
          *[Metrics](LifeLine_Metrics_and_Tracking_Plan_v2_FINAL.pdf) 
 
 
 
-*    **GIM mini-plan** ✅
+*    **📁 07 - GTM mini-plan** ✅
      * >*Positioning onboarding channels rollout.feedback*
 
        
@@ -85,60 +92,60 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
 
 
 
-*    **Team Process Evidence** ✅
+*    **📁 08 - Team Process Evidence** ✅
      * >*(Screenshots count as evidence)*
      
-       * *>RACI*✅  👉[RACI](RACI_TABLE-CHART_TSA39_CAPSTONE_PHOENIX.pdf)
+        * >*RACI*✅  👉[RACI](RACI_TABLE-CHART_TSA39_CAPSTONE_PHOENIX.pdf)
 
 
-       * *>Roadmap*✅ [👉 easy access at Architecture documents](../lifeline-roadmap-architecture/)
+        * >*Roadmap*✅ [👉 easy access at Architecture documents](../lifeline-roadmap-architecture/)
 
   
-       * *>sprint board*✅
-          * 👉[Board.v1](Sprint_Board_v1.PDF)
+        * >*sprint board*✅
+           * 👉[Board.v1](Sprint_Board_v1.PDF)
         
             
-          * 👉[Board.v2](Sprint_Board_v2.PDF)
+          * 👉[Board.v2](Sprint_Board_v2.PDF) 
         
             
           * 👉[Board.v3](Sprint_Board_v1.PDF)
 
        
-       * *>Decision Log:*✅  👉[Decision Log](Decision-Log.pdf)
+        * >*Decision Log:*✅  👉[Decision Log](Decision-Log.pdf)
 
   
-      * *Weekly Product Updates:* ✅
-        * >*4 entries from sprint board history*
-           * [weekly-updates](lifeline-weekly-updates.md)
+        * >*Weekly Product Updates:* ✅
+           * >*4 entries from sprint board history*
+               * [weekly-updates](lifeline-weekly-updates.md)
 
 
 
 
-*    **Pitch deck (10 slides)** ✅
-      * >*backup demo video on YouTube unlisted*
+     *   **📁 09 - Pitch deck (10 slides)** ✅
+          * >*backup demo video on YouTube unlisted*
 
 
 
-         * [PDF](LifeLine_Pitch_Deck_v4_FINAL.pdf)
+             * [PDF](LifeLine_Pitch_Deck_v4_FINAL.pdf)
 
   
-         * 👉 [Download PPTX here](LifeLine_Pitch_Deck_v4_FINAL.pptx)
+             * 👉 [Download PPTX here](LifeLine_Pitch_Deck_v4_FINAL.pptx)
 
 
 
 
 
-*    **Master Folder** ✅
-     * >*Shared via single public link*
+   *    **💼 10 -  Master Folder** ✅
+         * >*Shared via single public link*
        
-        * [Google Drive Folders](https://drive.google.com/drive/folders/1-Brs6CcKtow2uwkJsMumYC0nG7bJPqE1)
+            * [Google Drive Folders](https://drive.google.com/drive/folders/1-Brs6CcKtow2uwkJsMumYC0nG7bJPqE1)
 
 
 
 
-*    **Submission form** ✅
+   *    **📤 11 - Submission form** ✅
   
-       * [SUBMIT HERE](https://forms.gle/Pn4VWo7LBJWD3tAK6)
+           * [SUBMIT HERE](https://forms.gle/Pn4VWo7LBJWD3tAK6)
 
 
 
@@ -154,28 +161,39 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
 
 
 
-*   **📱 Product Design:** [Product Design](LifeLine_Product_Design_v2.html)
 
 
-*   **📱 GTM Mini Plan:** [GTM Mini Plan](LifeLine_GTM_Mini_Plan_v1_FINAL.md)
+# Linked submission checklist (15 items)
 
+## ✅ 01 - One-pager (PDF in folder -/+ native doc)
 
-*   **📱 GTM Mini Plan:** [GTM Mini Plan](LifeLine_GTM_Mini_Plan_v1_FINAL.md)
+## ✅ 02 - Discovery evidence (Synthesised insights + raw notes & screenshots)
 
+## ✅ 03 - PRD (Stories. AC, prioritisation, NFRs, edge cases)
 
-*   **📁 Design Pack:** [GTM Mini Plan](LifeLine_GTM_Mini_Plan_v1_FINAL.md)
+## ✅ 04 - Figma prototype (Link -+ design system documentation)
 
+## ✅ 05 - Working demo URL (Tested in incognito on at least 2 devices)
 
+## ✅ 06 - README + architectue (Run instructions +t boxes-and-arrows diagram)
 
+## ✅ 07 - Test plan + results (Known limits +tech debt list)
 
+## ✅ 08 - Metrics & tracking (Event plan tied to 2 flows + mock dashboard)
 
+## ✅ 09 - GTM mini-plan (Positioning onboarding channels rollout.feedback)
 
-Linked submission checklist (15 items)
+## ✅ 10 - Roadmap -+ sprint board +RACI (Screenshots count as evidence)
 
+## ✅ 11 - Weekly product updates (4 entries from sprint board history)
 
+## ✅ 12 - lteration/ change log (At least one before/atfter entry)
 
+## ✅ 13 - Pitch deck (10 slides) (+ backup demo video on YouTube unlisted)
 
+## ✅ 14 - Master Folder (Shared via single public link)
 
+## ✅ 15 - Submission form (https://orms.gle/Pn4VWo7LBJWD3tAK6)
 
 
 
@@ -191,51 +209,7 @@ Linked submission checklist (15 items)
 
 
 
-
-
-
-
-Direct links to every other folder
-
-
-
-"Submitted /" stamp + timestamp
-
-
-
-
-
-
-
-
-
-
-
-
-
-📱 
-
-
-
-📐 
-
-
-📁 
-
-
-📄
-
-
-
-
-
-
-
-
-
-
-
-
+# "Submitted /" >*stamp + timestamp*
 
 
 ---
