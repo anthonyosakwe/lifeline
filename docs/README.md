@@ -74,6 +74,8 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
 
 
 
+        * [Demo Video](../VideoCompress_Screen_Recording_20260524_122822_Chrome.mp4)
+
 
 *    **📁 06 - Metrics & tracking** ✅
      * >*Event plan tied to 2 flows + mock dashboard*
@@ -209,7 +211,8 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
 
 
 
-# "Submitted /" >*stamp + timestamp*
+# "Submitted /" 
+   * >*stamp + timestamp*
 
 
 ---
