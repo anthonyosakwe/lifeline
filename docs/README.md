@@ -78,9 +78,9 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
        * *>Roadmap*✅ [👉 easy access at Architecture documents](../lifeline-roadmap-architecture/)
        
        * *>sprint board*✅
-          * 👉[Board.v1](Sprint_Board_v1.pdf)
-          * 👉[Board.v2](Sprint_Board_v2.pdf)
-          * 👉[Board.v3](Sprint_Board_v1.pdf)
+          * 👉[Board.v1](Sprint_Board_v1.PDF)
+          * 👉[Board.v2](Sprint_Board_v2.PDF)
+          * 👉[Board.v3](Sprint_Board_v1.PDF)
        
        * *>Decision Log:*✅  👉[Decision Log](Decision-Log.pdf)
   
