@@ -56,7 +56,7 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
 
 *    **Team Process Evidence** ✅
       * *>(Screenshots count as evidence)*
-      * *>RACI* [RACI](RACITABLE-CHART_TSA39_CAPSTONE_PHOENIX.pdf)
+      * *>RACI* [RACI](RACI_TABLE-CHART_TSA39_CAPSTONE_PHOENIX.pdf)
       * *>Roadmap* [👉 easy access at Architecture documents](../lifeline-roadmap-architecture/)
       * *>sprint board* 👉 [Board.v1](Sprint Board_v1.PDF) 👉 [Board.v2](Sprint Board_v2.PDF) 👉 [Board.v3](Sprint Board_v1.PDF)
        
