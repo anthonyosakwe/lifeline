@@ -21,17 +21,22 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
 
 
 *   **📱 03 - PRD** ✅
-    * *>Stories. AC, prioritisation, NFRs, edge cases*
+    * >*Stories. AC, prioritisation, NFRs, edge cases*
     * [bdbbd](bdhdbd)
 
 
-*    **Figma prototype** ✅
-     * *>Link -+ design system documentation*
+*    **04 - Design Pack Figma prototype** ✅
+     * >*Link -+ design system documentation*
 
 
-*    **Working demo URL** ✅
-     * *>Tested in incognito on at least 2 devices*
-
+*    **05 - Build Evidence Working demo URL** ✅
+     * >*MVP scope, Architecture (boxes & arrows), Network resilience*
+     * >*Data flow, Build & run, Demo ch3at sheet*
+     * >*Manual Test & Tesults, Known Limitations
+     * >*Itirations 1 & 2: Tested in incognito on at least 2 devices*
+     * >*Itirations 1 & 2: Happy path, Failure path, + delighters*
+     * >*Vibe-coding evidence*
+        * [Build Documentation](../../lifeline-build-docs/)
 
 *    **README + architectue** ✅
      * *>Run instructions +t boxes-and-arrows diagram*
