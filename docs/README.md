@@ -16,66 +16,75 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
 
 
 *   **📁 02 - Discovery evidence** ✅
-    *>synthesised insights + raw notes & screenshots*
+    * >*synthesised insights + raw notes & screenshots*
     * [enter folder here](bdbbdvd)
 
 
 *   **📱 03 - PRD** ✅
-    *>Stories. AC, prioritisation, NFRs, edge cases*
+    * *>Stories. AC, prioritisation, NFRs, edge cases*
     * [bdbbd](bdhdbd)
 
 
 *    **Figma prototype** ✅
-     *>Link -+ design system documentation*
+     * *>Link -+ design system documentation*
 
 
 *    **Working demo URL** ✅
-     *>Tested in incognito on at least 2 devices*
+     * *>Tested in incognito on at least 2 devices*
 
 
 *    **README + architectue** ✅
-     *>Run instructions +t boxes-and-arrows diagram*
+     * *>Run instructions +t boxes-and-arrows diagram*
 
 
 
 *    **Test plan + results** ✅
-     *>Known limits +tech debt list*
+     * *>Known limits +tech debt list*
 
 
 
 
 *    **Metrics & tracking** ✅
-     *>Event plan tied to 2 flows + mock dashboard*
+     * *>Event plan tied to 2 flows + mock dashboard*
 
 
 
 *    **GIM mini-plan** ✅
-     *>Positioning onboarding channels rollout.feedback*
+     * *>Positioning onboarding channels rollout.feedback*
 
 
 
 *    **Team Process Evidence** ✅
-     *>Roadmap -+ sprint board + RACI*
-       *>(Screenshots count as evidence)*
+      * *>(Screenshots count as evidence)*
+      * *>RACI*
+      * *>Roadmap* [👉 easy access at Architecture documents](../lifeline-roadmap-architecture/)
+      * *>sprint board*
+       
 
 
 *   **📱 Weekly Product Updates:** ✅
-    *>4 entries from sprint board history*
+    * *>4 entries from sprint board history*
     * [weekly-updates](lifeline-weekly-updates.md)
 
 
 
 
 *    **lteration/ change log** ✅
-     *>At least one before/atfter entry*
+     * *>At least one before/atfter entry*
 
 
 *    **Pitch deck (10 slides)** ✅
-      *>+ backup demo video on YouTube unlisted*
+      * *>+ backup demo video on YouTube unlisted*
+*   **📱 The Pitch Deck:** ✅ [PDF](LifeLine_Pitch_Deck_v4_FINAL.pdf)
+  
+    * 👉   [Download PPTX here](LifeLine_Pitch_Deck_v4_FINAL.pptx)
+
+
+
 
 
 *    **Master Folder** ✅
-     *>Shared via single public link*
+     * *>Shared via single public link*
       * [Google Drive Folders](https://drive.google.com/drive/folders/1-Brs6CcKtow2uwkJsMumYC0nG7bJPqE1)
 
 
@@ -111,7 +120,7 @@ A personal-safety check-in app built for Nigerian mobile networks. Prevention-fi
 *   **📁 Design Pack:** [GTM Mini Plan](LifeLine_GTM_Mini_Plan_v1_FINAL.md)
 
 
-*   **📱 The Pitch Deck:** [Our Pitch Deck](LifeLine_Pitch_Deck_v4_FINAL.pdf)👉 [Download Slide Deck here](LifeLine_Pitch_Deck_v4_FINAL.pptx)
+
 
 
 
